@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://huiboxs.cn/"/>
-  <updated>2019-11-12T04:30:03.765Z</updated>
+  <updated>2019-11-28T15:12:42.610Z</updated>
   <id>https://huiboxs.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CSS引入与三种选择器</title>
+    <link href="https://huiboxs.cn/2019/11/29/CSS%E5%BC%95%E5%85%A5%E4%B8%8E%E4%B8%89%E7%A7%8D%E9%80%89%E6%8B%A9%E5%99%A8/"/>
+    <id>https://huiboxs.cn/2019/11/29/CSS%E5%BC%95%E5%85%A5%E4%B8%8E%E4%B8%89%E7%A7%8D%E9%80%89%E6%8B%A9%E5%99%A8/</id>
+    <published>2019-11-29T08:33:28.571Z</published>
+    <updated>2019-11-28T15:12:42.610Z</updated>
+    
+    <content type="html"><![CDATA[<p>问题引导</p><p>1：为何引用CSS？</p><p>2：多种选择器作用同一元素时谁会生效？</p><p>掌握了HTML基础，应用起来也可以做出比较不错的页面，但是要做出更加精美的网页还是要依靠CSS，一个网页中所看到的字体、间距、颜色和部分特效等都是由CSS来实现的，通过选择器对文档某个部分添加样式。显然，CSS不能单独使用。把网页比作建房子的话，HTML做出毛胚房，CSS来装修。CSS与HTML是两个语言，引入CSS就是将它们关联在一起。</p><p>CSS由三种引用方式：内嵌、内联、外联。</p><p>1）内嵌</p><blockquote><!--<div style="color: pink;">Hellow world !!!</div>--></blockquote><p>优先级最高,但是当网页内容变多后，想要更改样式就比较费时间。并且只能给单个标签使用。不建议使用这种方式。</p><p>2）内联</p><style>    div{color: pink;}/* color为更改字体颜色 */</style><p>在<head>部分添加<style></style>标签，在标签内直接写CSS，在代码量少时为了方便可以这样，为了规范还是不建议使用这种方式。</p><p>3)外联</p><p>将CSS单独写在.css文件中，通过HTML的<link>标签从外部导入到。</p><link rel="stylesheet" type="text/css" href="./fileName.css"/><p>符合“结构样式行为相分离”，规范并且便于后期维护。</p><p>通常情况下如果同时用多种方法给同一个元素设置相同的属性但是不同的属性值时，会优先显示内嵌的样式，然后就是内联，最后才是外联。也就是说在优先级方面，内嵌&gt;内联&gt;外联。</p><p>上学的时候老师依靠同学的名字或者位置准确的叫某位同学回答问题.CSS也是如此,依靠选择器对网页中的每一个HTML元素添加样式.最最常见的选择器有以下三种</p><p>1.标签选择器</p><style>    body{        color: pink;            /* body标签内所有元素字体颜色改为pink */        margin: 0;                /* body标签内所有元素边距为0 */        padding: 0;                /* body标签内所有元素填充为0 */    }</style><p>直接在HTML某种标签后加花括号,文档内所有此类标签都会生效.写代码讲究”高内聚弱耦合”,如果几行代码都实现同样的功能,可以简化就简化.比如网页中HTML中的a标签默认是带下划线并且是蓝色的,然而这显然不符合现代人的审美,通常都会用一个标签选择器来去掉下划线,改下字体样式.</p><p>2.<code>id</code>选择器</p><head>    <style>        #demo{color: pink;}   /* 在id名前加个 # ,优先级较高 */    </style><link rel="alternate" href="/atom.xml" title="ShaohuiのBlog" type="application/atom+xml"></head><body>    <!--<div id="demo"></div>--></body><p>在标签中加<code>id=&quot;id-name&quot;</code> 标签就有了自己的<code>id</code>,在<code>id</code>名前加一个<code>＃</code> 即可为拥有这个<code>id</code>值的所有属性添加样式.不过为了规范,通常一个<code>id</code>只给一个标签,保证其唯一性,就如同每个人的身份证号码一般.</p><p>3.<code>class</code>选择器(类选择器)</p><head>    <style>        .demo{color: pink;}   /* 在class名前加个 .  */    </style></head><body>    <!--<div class="demo"></div>--></body><p>不难看出,与<code>id</code>选择器十分类似.那么它们的区别在哪儿呢?能直观看出区别的就是<code>id</code>选择器的优先级比<code>class</code>选择器高.为了使结构更加明确,通常多个元素要用相同的样式时用<code>class</code>,那么单一的元素—最好也使用<code>class</code>.通常<code>id</code>是给<code>JavaScript</code>用的.</p><p>在优先级方面,标签选择器.标签选择器一次针对的对象可能会非常多,优先级自然不会高,然后就是<code>class</code>,”唯一”的<code>id</code>优先级当然是最高的,<code>id</code>选择器&gt;<code>class</code>选择器&gt;.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;问题引导&lt;/p&gt;
+&lt;p&gt;1：为何引用CSS？&lt;/p&gt;
+&lt;p&gt;2：多种选择器作用同一元素时谁会生效？&lt;/p&gt;
+&lt;p&gt;掌握了HTML基础，应用起来也可以做出比较不错的页面，但是要做出更加精美的网页还是要依靠CSS，一个网页中所看到的字体、间距、颜色和部分特效等都是由CSS来实现
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>flex布局</title>
