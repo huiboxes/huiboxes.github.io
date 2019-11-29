@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="CSS,前端," />
 
 
 
@@ -81,14 +81,15 @@
 
 
 
-<meta name="description" content="问题引导 1：为何引用CSS？ 2：多种选择器作用同一元素时谁会生效？ 掌握了HTML基础，应用起来也可以做出比较不错的页面，但是要做出更加精美的网页还是要依靠CSS，一个网页中所看到的字体、间距、颜色和部分特效等都是由CSS来实现的，通过选择器对文档某个部分添加样式。显然，CSS不能单独使用。把网页比作建房子的话，HTML做出毛胚房，CSS来装修。CSS与HTML是两个语言，引入CSS就是将它们">
+<meta name="description" content="1：为何引用CSS？2：多种选择器作用同一元素时谁会生效？ 掌握了HTML基础，应用起来也可以做出比较不错的页面，但是要做出更加精美的网页还是要依靠CSS，一个网页中所看到的字体、间距、颜色和部分特效等都是由CSS来实现的，通过选择器对文档某个部分添加样式。显然，CSS不能单独使用。把网页比作建房子的话，HTML做出毛胚房，CSS来装修。CSS与HTML是两个语言，引入CSS就是将它们关联在一起。">
+<meta name="keywords" content="CSS,前端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS引入与三种选择器">
 <meta property="og:url" content="https:&#x2F;&#x2F;huiboxs.cn&#x2F;2019&#x2F;11&#x2F;29&#x2F;CSS%E5%BC%95%E5%85%A5%E4%B8%8E%E4%B8%89%E7%A7%8D%E9%80%89%E6%8B%A9%E5%99%A8&#x2F;index.html">
 <meta property="og:site_name" content="ShaohuiのBlog">
-<meta property="og:description" content="问题引导 1：为何引用CSS？ 2：多种选择器作用同一元素时谁会生效？ 掌握了HTML基础，应用起来也可以做出比较不错的页面，但是要做出更加精美的网页还是要依靠CSS，一个网页中所看到的字体、间距、颜色和部分特效等都是由CSS来实现的，通过选择器对文档某个部分添加样式。显然，CSS不能单独使用。把网页比作建房子的话，HTML做出毛胚房，CSS来装修。CSS与HTML是两个语言，引入CSS就是将它们">
+<meta property="og:description" content="1：为何引用CSS？2：多种选择器作用同一元素时谁会生效？ 掌握了HTML基础，应用起来也可以做出比较不错的页面，但是要做出更加精美的网页还是要依靠CSS，一个网页中所看到的字体、间距、颜色和部分特效等都是由CSS来实现的，通过选择器对文档某个部分添加样式。显然，CSS不能单独使用。把网页比作建房子的话，HTML做出毛胚房，CSS来装修。CSS与HTML是两个语言，引入CSS就是将它们关联在一起。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-28T15:12:42.610Z">
+<meta property="og:updated_time" content="2019-11-29T08:39:29.171Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -315,7 +316,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-29T16:33:28+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-29T16:40:00+08:00">
                 2019-11-29
               </time>
             
@@ -325,6 +326,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -363,9 +386,7 @@
       
 
       
-        <p>问题引导</p>
-<p>1：为何引用CSS？</p>
-<p>2：多种选择器作用同一元素时谁会生效？</p>
+        <p>1：为何引用CSS？<br>2：多种选择器作用同一元素时谁会生效？</p>
 <p>掌握了HTML基础，应用起来也可以做出比较不错的页面，但是要做出更加精美的网页还是要依靠CSS，一个网页中所看到的字体、间距、颜色和部分特效等都是由CSS来实现的，通过选择器对文档某个部分添加样式。显然，CSS不能单独使用。把网页比作建房子的话，HTML做出毛胚房，CSS来装修。CSS与HTML是两个语言，引入CSS就是将它们关联在一起。</p>
 <p>CSS由三种引用方式：内嵌、内联、外联。</p>
 <p>1）内嵌</p>
@@ -436,6 +457,14 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
+          
+            <a href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag"># 前端</a>
+          
+        </div>
       
 
       
@@ -551,7 +580,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>

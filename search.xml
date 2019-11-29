@@ -3,9 +3,7 @@
   <entry>
     <title>CSS引入与三种选择器</title>
     <url>/2019/11/29/CSS%E5%BC%95%E5%85%A5%E4%B8%8E%E4%B8%89%E7%A7%8D%E9%80%89%E6%8B%A9%E5%99%A8/</url>
-    <content><![CDATA[<p>问题引导</p>
-<p>1：为何引用CSS？</p>
-<p>2：多种选择器作用同一元素时谁会生效？</p>
+    <content><![CDATA[<p>1：为何引用CSS？<br>2：多种选择器作用同一元素时谁会生效？</p>
 <p>掌握了HTML基础，应用起来也可以做出比较不错的页面，但是要做出更加精美的网页还是要依靠CSS，一个网页中所看到的字体、间距、颜色和部分特效等都是由CSS来实现的，通过选择器对文档某个部分添加样式。显然，CSS不能单独使用。把网页比作建房子的话，HTML做出毛胚房，CSS来装修。CSS与HTML是两个语言，引入CSS就是将它们关联在一起。</p>
 <p>CSS由三种引用方式：内嵌、内联、外联。</p>
 <p>1）内嵌</p>
@@ -63,6 +61,13 @@
 <p>不难看出,与<code>id</code>选择器十分类似.那么它们的区别在哪儿呢?能直观看出区别的就是<code>id</code>选择器的优先级比<code>class</code>选择器高.为了使结构更加明确,通常多个元素要用相同的样式时用<code>class</code>,那么单一的元素—最好也使用<code>class</code>.通常<code>id</code>是给<code>JavaScript</code>用的.</p>
 <p>在优先级方面,标签选择器.标签选择器一次针对的对象可能会非常多,优先级自然不会高,然后就是<code>class</code>,”唯一”的<code>id</code>优先级当然是最高的,<code>id</code>选择器&gt;<code>class</code>选择器&gt;.</p>
 ]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+        <tag>前端</tag>
+      </tags>
   </entry>
   <entry>
     <title>flex布局</title>
@@ -75,8 +80,8 @@
         <category>CSS</category>
       </categories>
       <tags>
-        <tag>CSS布局</tag>
         <tag>前端</tag>
+        <tag>CSS布局</tag>
       </tags>
   </entry>
   <entry>
