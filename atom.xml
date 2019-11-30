@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://huiboxs.cn/"/>
-  <updated>2019-11-30T12:10:45.383Z</updated>
+  <updated>2019-11-30T15:24:42.291Z</updated>
   <id>https://huiboxs.cn/</id>
   
   <author>
@@ -17,20 +17,23 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>盒子模型</title>
+    <title>普通流与盒子模型</title>
     <link href="https://huiboxs.cn/2019/11/30/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/"/>
     <id>https://huiboxs.cn/2019/11/30/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/</id>
     <published>2019-11-30T12:11:00.000Z</published>
-    <updated>2019-11-30T12:10:45.383Z</updated>
+    <updated>2019-11-30T15:24:42.291Z</updated>
     
-    <content type="html"><![CDATA[<p>1.什么是盒子模型？盒子的大小是多少？</p><p>​        网页中所有的文字、图片等内容都是写在标签内的，可以将这些<code>HTML</code>标签看作是一个容器——盒子。通过<code>CSS</code>设置<code>width</code>属性、<code>height</code>属性控制这个盒子的宽高（盒子大了，能装的东西自然会更多）。在这个盒子里可以用<code>padding</code>属性来填充，达到使内容相对于这个盒子居中的效果（既然是填充，当然不能在填充部分放东西）。通过<code>border</code>属性给盒子加边框，美化这个盒子。想控制每个盒子的间距，可以使用<code>margin</code>，控制这个完全透明的“隔板”的厚度。如果未给盒子指定宽高，盒子的大小是根据内容的宽高，假如给盒子盒子固定的宽高，当内容大于盒子时，内容会溢出，盒子不会有任何变化。补充：前面说到网页中所有HTML标签都可看作是一个盒子，那么<code>&lt;body&gt;</code>标签算吗？算的，并且细心观察会发现<code>&lt;body&gt;</code>标签是自带8px的外边距的。</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">div&#123;</span><br><span class="line">width: 20px;/* 盒子宽度20像素 */</span><br><span class="line">height: 20px;/* 盒子高度20px */</span><br><span class="line">border: 1px solid black;/* 给盒子四周加上1像素、黑色实线边框 */</span><br><span class="line">padding: 2px;/* 给盒子内部四周填充2像素 */</span><br><span class="line">margin: 20px;/* 给盒子外部四周加20像素间距 */</span><br><span class="line">&#125;</span><br><span class="line">/* ==========================================================================</span><br><span class="line">       以上是复合属性，一次性同设置加盒子四周。想单独设置盒子某个方向的话在属性后加方向来单独设置</span><br><span class="line">       例如： </span><br><span class="line">       margin-top: 10px;单独添加外上边距10像素</span><br><span class="line">       margin-right: 10px;单独添加外右边距10像素</span><br><span class="line">       margin-bottom: 10px;单独添加外下边距10像素</span><br><span class="line">       margin-left: 10px;单独添加外左边距10像素</span><br><span class="line">       border与padding以此类推也是同样的方法。</span><br><span class="line">       ========================================================================== */</span><br><span class="line">&lt;style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure><p>上面的盒子实际宽高是多少？</p><p>这要分情况，因为盒子模型分为两种，一种是W3C标准盒模型，还有一种在低版本IE环境下的IE盒模型。两者两者的区别在于W3C盒模型的宽高等于<code>margin+border+padding+content</code>，IE盒模型的宽高等于<code>margin+content</code>。也就是说<code>padding、border</code>是算在IE盒模型的内容部分的。</p><p>上面的盒子按照W3C标准盒模型计算的话是：</p><p>因为宽高设置同样的值，所以宽高都是：20+1<em>2+2</em>2+20*2=46px</p><p>按照IE盒模型计算的话，宽高：20+20*2=40px</p><p>怎样快速理解盒子模型？用尽量少的<code>&lt;div&gt;</code>标签画一个远视图。</p>]]></content>
+    <content type="html"><![CDATA[<p>流与盒子模型</p><p>问题引导</p><p>1.什么是流？有几种流？</p><p>2.什么是盒子模型？盒子的大小是多少？</p><p>通常情况下，制作一个页面写的所有东西都是紧跟其前一个元素之后的，如同流水一般，这就是默认的布局方式——普通流，也叫常规流。有常规流当然也有非常规的，使用浮动与绝对定位后，元素脱离会脱离普通流(浮动不是完全脱离)，也就是非常规流。这里的普通流不少地方也叫做文档流，其实文档流的说法是因为很多地方将CSS官方文档中的normal flow翻译错了，称为普通流的话更为专业。</p><p>​        网页中所有的文字、图片等内容都是写在标签内的，可以将这些<code>HTML</code>标签看作是一个容器——盒子。通过<code>CSS</code>设置<code>width</code>属性、<code>height</code>属性控制这个盒子的宽高（盒子大了，能装的东西自然会更多）。在这个盒子里可以用<code>padding</code>属性来填充，达到使内容相对于这个盒子居中的效果（既然是填充，当然不能在填充部分放东西）。通过<code>border</code>属性给盒子加边框，美化这个盒子。想控制每个盒子的间距，可以使用<code>margin</code>，控制这个完全透明的“隔板”的厚度。如果未给盒子指定宽高，盒子的大小是根据内容的宽高，假如给盒子盒子固定的宽高，当内容大于盒子时，内容会溢出，盒子不会有任何变化。补充：前面说到网页中所有HTML标签都可看作是一个盒子，那么<body>标签算吗？算的，并且细心观察会发现<body>标签是自带8px的外边距的。</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">div&#123;</span><br><span class="line">width: 20px;/* 盒子宽度20像素 */</span><br><span class="line">height: 20px;/* 盒子高度20px */</span><br><span class="line">border: 1px solid black;/* 给盒子四周加上1像素、黑色实线边框 */</span><br><span class="line">padding: 2px;/* 给盒子内部四周填充2像素 */</span><br><span class="line">margin: 20px;/* 给盒子外部四周加20像素间距 */</span><br><span class="line">&#125;</span><br><span class="line">/* ==========================================================================</span><br><span class="line">       以上是复合属性，一次性同设置加盒子四周。想单独设置盒子某个方向的话在属性后加方向来单独设置</span><br><span class="line">       例如： </span><br><span class="line">       margin-top: 10px;单独添加外上边距10像素</span><br><span class="line">       margin-right: 10px;单独添加外右边距10像素</span><br><span class="line">       margin-bottom: 10px;单独添加外下边距10像素</span><br><span class="line">       margin-left: 10px;单独添加外左边距10像素</span><br><span class="line">       border与padding以此类推也是同样的方法。</span><br><span class="line">       ========================================================================== */</span><br><span class="line">&lt;style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure><p>上面的盒子实际宽高是多少？</p><p>这要分情况，因为盒子模型分为两种，一种是W3C标准盒模型，还有一种在低版本IE环境下的IE盒模型。两者两者的区别在于W3C盒模型的宽高等于<code>margin+border+padding+content</code>，IE盒模型的宽高等于<code>margin+content</code>。也就是说<code>padding、border</code>是算在IE盒模型的内容部分的。</p><p>上面的盒子按照W3C标准盒模型计算的话是：</p><p>因为宽高设置同样的值，所以宽高都是：20+1<em>2+2</em>2+20*2=46px</p><p>按照IE盒模型计算的话，宽高：20+20*2=40px</p><p>怎样快速理解盒子模型？用尽量少的<div>标签画一个远视图。</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;1.什么是盒子模型？盒子的大小是多少？&lt;/p&gt;
-&lt;p&gt;​        网页中所有的文字、图片等内容都是写在标签内的，可以将这些&lt;code&gt;HTML&lt;/code&gt;标签看作是一个容器——盒子。通过&lt;code&gt;CSS&lt;/code&gt;设置&lt;code&gt;width&lt;/code&gt;属性、&lt;
+        &lt;p&gt;流与盒子模型&lt;/p&gt;
+&lt;p&gt;问题引导&lt;/p&gt;
+&lt;p&gt;1.什么是流？有几种流？&lt;/p&gt;
+&lt;p&gt;2.什么是盒子模型？盒子的大小是多少？&lt;/p&gt;
+&lt;p&gt;通常情况下，制作一个页面写的所有东西都是紧跟其前一个元素之后的，如同流水一般，这就是默认的布局方式——普通流，也叫常规流。有常规
       
     
     </summary>
