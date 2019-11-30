@@ -46,6 +46,35 @@
   </entry>
   
   <entry>
+    <title>CSS引入与三种选择器</title>
+    <link href="https://huiboxs.cn/2019/11/29/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E3%80%81%E6%B5%AE%E5%8A%A8/"/>
+    <id>https://huiboxs.cn/2019/11/29/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E3%80%81%E6%B5%AE%E5%8A%A8/</id>
+    <published>2019-11-29T08:40:00.000Z</published>
+    <updated>2019-11-30T12:06:33.891Z</updated>
+    
+    <content type="html"><![CDATA[<p>1.什么是盒子模型？盒子的大小是多少？</p><p>​        网页中所有的文字、图片等内容都是写在标签内的，可以将这些<code>HTML</code>标签看作是一个容器——盒子。通过<code>CSS</code>设置<code>width</code>属性、<code>height</code>属性控制这个盒子的宽高（盒子大了，能装的东西自然会更多）。在这个盒子里可以用<code>padding</code>属性来填充，达到使内容相对于这个盒子居中的效果（既然是填充，当然不能在填充部分放东西）。通过<code>border</code>属性给盒子加边框，美化这个盒子。想控制每个盒子的间距，可以使用<code>margin</code>，控制这个完全透明的“隔板”的厚度。如果未给盒子指定宽高，盒子的大小是根据内容的宽高，假如给盒子盒子固定的宽高，当内容大于盒子时，内容会溢出，盒子不会有任何变化。补充：前面说到网页中所有HTML标签都可看作是一个盒子，那么<body>标签算吗？算的，并且细心观察会发现<body>标签是自带8px的外边距的。</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">div&#123;</span><br><span class="line">width: 20px;/* 盒子宽度20像素 */</span><br><span class="line">height: 20px;/* 盒子高度20px */</span><br><span class="line">border: 1px solid black;/* 给盒子四周加上1像素、黑色实线边框 */</span><br><span class="line">padding: 2px;/* 给盒子内部四周填充2像素 */</span><br><span class="line">margin: 20px;/* 给盒子外部四周加20像素间距 */</span><br><span class="line">&#125;</span><br><span class="line">/* ==========================================================================</span><br><span class="line">       以上是复合属性，一次性同设置加盒子四周。想单独设置盒子某个方向的话在属性后加方向来单独设置</span><br><span class="line">       例如： </span><br><span class="line">       margin-top: 10px;单独添加外上边距10像素</span><br><span class="line">       margin-right: 10px;单独添加外右边距10像素</span><br><span class="line">       margin-bottom: 10px;单独添加外下边距10像素</span><br><span class="line">       margin-left: 10px;单独添加外左边距10像素</span><br><span class="line">       border与padding以此类推也是同样的方法。</span><br><span class="line">       ========================================================================== */</span><br><span class="line">&lt;style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure><p>上面的盒子实际宽高是多少？</p><p>这要分情况，因为盒子模型分为两种，一种是W3C标准盒模型，还有一种在低版本IE环境下的IE盒模型。两者两者的区别在于W3C盒模型的宽高等于<code>margin+border+padding+content</code>，IE盒模型的宽高等于<code>margin+content</code>。也就是说<code>padding、border</code>是算在IE盒模型的内容部分的。</p><p>上面的盒子按照W3C标准盒模型计算的话是：</p><p>因为宽高设置同样的值，所以宽高都是：20+1<em>2+2</em>2+20*2=46px</p><p>按照IE盒模型计算的话，宽高：20+20*2=40px</p><p>怎样快速理解盒子模型？用尽量少的<div>标签画一个远视图。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;1.什么是盒子模型？盒子的大小是多少？&lt;/p&gt;
+&lt;p&gt;​        网页中所有的文字、图片等内容都是写在标签内的，可以将这些&lt;code&gt;HTML&lt;/code&gt;标签看作是一个容器——盒子。通过&lt;code&gt;CSS&lt;/code&gt;设置&lt;code&gt;width&lt;/code&gt;属性、&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="CSS" scheme="https://huiboxs.cn/categories/CSS/"/>
+    
+    
+      <category term="前端" scheme="https://huiboxs.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="盒子模型" scheme="https://huiboxs.cn/tags/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/"/>
+    
+  </entry>
+  
+  <entry>
     <title>flex布局</title>
     <link href="https://huiboxs.cn/2019/11/11/flex%E5%B8%83%E5%B1%80/"/>
     <id>https://huiboxs.cn/2019/11/11/flex%E5%B8%83%E5%B1%80/</id>
