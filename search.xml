@@ -24,6 +24,7 @@
       <tags>
         <tag>前端</tag>
         <tag>盒子模型</tag>
+        <tag>流</tag>
       </tags>
   </entry>
   <entry>
@@ -67,8 +68,8 @@
         <category>CSS</category>
       </categories>
       <tags>
-        <tag>CSS选择器</tag>
         <tag>前端</tag>
+        <tag>CSS选择器</tag>
       </tags>
   </entry>
   <entry>
@@ -82,8 +83,8 @@
         <category>CSS</category>
       </categories>
       <tags>
-        <tag>前端</tag>
         <tag>CSS布局</tag>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
