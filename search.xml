@@ -18,8 +18,8 @@
         <category>CSS</category>
       </categories>
       <tags>
-        <tag>盒子模型</tag>
         <tag>前端</tag>
+        <tag>盒子模型</tag>
       </tags>
   </entry>
   <entry>
@@ -35,7 +35,7 @@
 <p>优先级最高,但是当网页内容变多后，想要更改样式就比较费时间。并且只能给单个标签使用。不建议使用这种方式。</p>
 <p>2）内联</p>
 <style>
-    div{color: pink;}/* color为更改字体颜色 */
+    div{color: black;}/* 所有div内的字体颜色都改为黑色 */
 </style>
 
 <p>在<head>部分添加<style></style>标签，在标签内直接写CSS，在代码量少时为了方便可以这样，为了规范还是不建议使用这种方式。</p>
@@ -47,7 +47,7 @@
 <p>通常情况下如果同时用多种方法给同一个元素设置相同的属性但是不同的属性值时，会优先显示内嵌的样式，然后就是内联，最后才是外联。也就是说在优先级方面，内嵌&gt;内联&gt;外联。</p>
 <p>上学的时候老师依靠同学的名字或者位置准确的叫某位同学回答问题.CSS也是如此,依靠选择器对网页中的每一个HTML元素添加样式.最最常见的选择器有以下三种</p>
 <p>1.标签选择器</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">    body&#123;</span><br><span class="line"><span class="css">        <span class="selector-tag">color</span>: <span class="selector-tag">pink</span>;			<span class="comment">/* body标签内所有元素字体颜色改为pink */</span></span></span><br><span class="line"><span class="css">        <span class="selector-tag">margin</span>: 0;				<span class="comment">/* body标签内所有元素边距为0 */</span></span></span><br><span class="line"><span class="css">        <span class="selector-tag">padding</span>: 0;				<span class="comment">/* body标签内所有元素填充为0 */</span></span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">    body&#123;</span><br><span class="line"><span class="css">        <span class="selector-tag">color</span>: <span class="selector-tag">black</span>;			<span class="comment">/* body标签内所有元素字体颜色改为black */</span></span></span><br><span class="line"><span class="css">        <span class="selector-tag">margin</span>: 0;				<span class="comment">/* body标签内所有元素边距为0 */</span></span></span><br><span class="line"><span class="css">        <span class="selector-tag">padding</span>: 0;				<span class="comment">/* body标签内所有元素填充为0 */</span></span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>直接在HTML某种标签后加花括号,文档内所有此类标签都会生效.写代码讲究”高内聚弱耦合”,如果几行代码都实现同样的功能,可以简化就简化.比如网页中HTML中的a标签默认是带下划线并且是蓝色的,然而这显然不符合现代人的审美,通常都会用一个标签选择器来去掉下划线,改下字体样式.</p>
 <p>2.<code>id</code>选择器</p>
@@ -63,8 +63,8 @@
         <category>CSS</category>
       </categories>
       <tags>
-        <tag>前端</tag>
         <tag>CSS选择器</tag>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>

@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="前端,CSS选择器," />
+  <meta name="keywords" content="CSS选择器,前端," />
 
 
 
@@ -82,14 +82,14 @@
 
 
 <meta name="description" content="1：为何引用CSS？2：多种选择器作用同一元素时谁会生效？ 掌握了HTML基础，应用起来也可以做出比较不错的页面，但是要做出更加精美的网页还是要依靠CSS，一个网页中所看到的字体、间距、颜色和部分特效等都是由CSS来实现的，通过选择器对文档某个部分添加样式。显然，CSS不能单独使用。把网页比作建房子的话，HTML做出毛胚房，CSS来装修。CSS与HTML是两个语言，引入CSS就是将它们关联在一起。">
-<meta name="keywords" content="前端,CSS选择器">
+<meta name="keywords" content="CSS选择器,前端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS引入与三种选择器">
 <meta property="og:url" content="https:&#x2F;&#x2F;huiboxs.cn&#x2F;2019&#x2F;11&#x2F;29&#x2F;CSS%E5%BC%95%E5%85%A5%E4%B8%8E%E4%B8%89%E7%A7%8D%E9%80%89%E6%8B%A9%E5%99%A8&#x2F;index.html">
 <meta property="og:site_name" content="ShaohuiのBlog">
 <meta property="og:description" content="1：为何引用CSS？2：多种选择器作用同一元素时谁会生效？ 掌握了HTML基础，应用起来也可以做出比较不错的页面，但是要做出更加精美的网页还是要依靠CSS，一个网页中所看到的字体、间距、颜色和部分特效等都是由CSS来实现的，通过选择器对文档某个部分添加样式。显然，CSS不能单独使用。把网页比作建房子的话，HTML做出毛胚房，CSS来装修。CSS与HTML是两个语言，引入CSS就是将它们关联在一起。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-30T12:12:25.608Z">
+<meta property="og:updated_time" content="2019-11-30T12:34:21.950Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -396,7 +396,7 @@
 <p>优先级最高,但是当网页内容变多后，想要更改样式就比较费时间。并且只能给单个标签使用。不建议使用这种方式。</p>
 <p>2）内联</p>
 <style>
-    div{color: pink;}/* color为更改字体颜色 */
+    div{color: black;}/* 所有div内的字体颜色都改为黑色 */
 </style>
 
 <p>在<head>部分添加<style></style>标签，在标签内直接写CSS，在代码量少时为了方便可以这样，为了规范还是不建议使用这种方式。</p>
@@ -408,7 +408,7 @@
 <p>通常情况下如果同时用多种方法给同一个元素设置相同的属性但是不同的属性值时，会优先显示内嵌的样式，然后就是内联，最后才是外联。也就是说在优先级方面，内嵌&gt;内联&gt;外联。</p>
 <p>上学的时候老师依靠同学的名字或者位置准确的叫某位同学回答问题.CSS也是如此,依靠选择器对网页中的每一个HTML元素添加样式.最最常见的选择器有以下三种</p>
 <p>1.标签选择器</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">    body&#123;</span><br><span class="line"><span class="css">        <span class="selector-tag">color</span>: <span class="selector-tag">pink</span>;			<span class="comment">/* body标签内所有元素字体颜色改为pink */</span></span></span><br><span class="line"><span class="css">        <span class="selector-tag">margin</span>: 0;				<span class="comment">/* body标签内所有元素边距为0 */</span></span></span><br><span class="line"><span class="css">        <span class="selector-tag">padding</span>: 0;				<span class="comment">/* body标签内所有元素填充为0 */</span></span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">    body&#123;</span><br><span class="line"><span class="css">        <span class="selector-tag">color</span>: <span class="selector-tag">black</span>;			<span class="comment">/* body标签内所有元素字体颜色改为black */</span></span></span><br><span class="line"><span class="css">        <span class="selector-tag">margin</span>: 0;				<span class="comment">/* body标签内所有元素边距为0 */</span></span></span><br><span class="line"><span class="css">        <span class="selector-tag">padding</span>: 0;				<span class="comment">/* body标签内所有元素填充为0 */</span></span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>直接在HTML某种标签后加花括号,文档内所有此类标签都会生效.写代码讲究”高内聚弱耦合”,如果几行代码都实现同样的功能,可以简化就简化.比如网页中HTML中的a标签默认是带下划线并且是蓝色的,然而这显然不符合现代人的审美,通常都会用一个标签选择器来去掉下划线,改下字体样式.</p>
 <p>2.<code>id</code>选择器</p>
@@ -436,9 +436,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag"># 前端</a>
-          
             <a href="/tags/CSS%E9%80%89%E6%8B%A9%E5%99%A8/" rel="tag"># CSS选择器</a>
+          
+            <a href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag"># 前端</a>
           
         </div>
       
