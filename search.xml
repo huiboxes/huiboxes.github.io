@@ -23,10 +23,10 @@
 <p>1.安装Git Bash：在 <a href="https://gitforwindows.org/" target="_blank" rel="noopener">https://gitforwindows.org/</a> 下载，然后一直下一步就好。</p>
 <p>2.注册Github账户：点这里进入<a href="github.com">官网</a>,英语不好的建议用chrome，翻译挺好用的。注册时全部默认下一步即可，注册完账号就创建一个新仓库，别的都不管，直接默认的选项下一步即可，等后面没事了一定要有空就打开看看，每个都按一下，摸索一下(不要删除仓库和账号就好)。</p>
 <p>二、配置Git Bash：</p>
-<p>依次在输入下面的内容，输一行，按一次回车。</p>
+<p>在命令行依次在输入下面的内容，输一行，按一次回车。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;***&quot;				#双引号内为github的用户名</span><br><span class="line">git config --global user.email &quot;***@gmail.com&quot;	#双引号为github的邮箱</span><br><span class="line">git config --global push.default simple			#更改push方式</span><br><span class="line">git config --global core.quotepath false		#防止文件名变成数字</span><br><span class="line">git config --global core.editor &quot;vim&quot;			#使用vim编辑提交信息</span><br></pre></td></tr></table></figure>
 
-<p>Git Bash只需要在工作目录右击鼠标，然后选Git Bash here即可</p>
+<p>在任何地方只需要右击鼠标，然后选Git Bash here即可打开一个命令行界面，默认情况打开后就处于当前文件所在位置。命令行内可以运行简单的linux命令。</p>
 <p>三、配置Github</p>
 <p>1、打开Git Bash  → 输入<code>rm -rf ~/.ssh/*</code>  然后回车把现有的ssh key都删掉（千万不能输错，不然就要重装系      统了）→  输入<code>ssh-keygen -t rsa -b 4096 -c &quot;你的邮箱&quot;</code>  →  按三次回车就创建好了，在根目录下的.ssh      目录中有两个文件，id_rsa是私钥，不能给任何人。</p>
 <p>​      紧接着输入<code>cat ~/.ssh/id_rsa.pub</code> → 从ssh_rsa开始复制全部内容。</p>
@@ -39,6 +39,30 @@
 <li>​    一个key可以访问所有的仓库。</li>
 </ul>
 <p>四、使用Git</p>
+<ol>
+<li>本地仓库的使(跟着敲会有奇效)</li>
+</ol>
+<p>​    在你认为合适的盘符下创建一个文件夹，进入该文件夹右击鼠标点Git Bash here(命令行创建的无视这句)。然后    输入<code>git init</code>初始化本地仓库，这个文件夹就成了工作区。文件夹内会多出一个名为<code>.git</code>的隐藏文件夹，不    要动这个隐藏文件。</p>
+<p>​    在工作区内随便创建文件，输入<code>git status -sb</code>后可以看到所创建的文件名前会有两个<code>??</code>，</p>
+<p>​    因为git不知道你后面会怎样对待这些文件的变动（增加、删除、更改都是变动）。</p>
+<p>​    使用<code>git add 你创建的文件名</code>将某个文件添加到暂存区，使用<code>git add .</code>将当前目录里面所有的变动都加到暂    存区。</p>
+<p>​    再次使用<code>git status -sb</code>会看到<code>??</code>变成了A(Add添加的意思)。</p>
+<p>​    使用<code>git commit 你创建的文件名 -m &quot;注释信息，方便以后查看例：first commit&quot;</code>将某个文件提交到本地仓库，    使用<code>git commit .  -m &quot;注释&quot;</code>将当前目录里文件都commit。</p>
+<p>​    修改自己创建的文件后再使用<code>git status -sb</code>会发现提示中有一个”M(Modified修改的意思)”。想保存的话需    要先<code>git add</code> 再<code>git commit</code>。</p>
+<p>2.将本地仓库上传到Github</p>
+<p>​    在文章开头就提到过在Github创建一个仓库，就是为了这一步。进入仓库首页复制你的仓库地址</p>
+<p><img src="C:%5CUsers%5CH2000%5CDesktop%5C%E6%96%87%E7%AB%A0%5Cimage%5Cgithub.png" alt=""></p>
+<p>​    选这个SSH因为用HTTPS的话以后每次更新都要输入密码。之前上传SSH公钥就是为了用SSH。接下来依次在命    令行输入下面的内容，输一行，按一次回车。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git remote add origin 粘贴你复制的仓库地址</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+<p>刷新Github你会发现你的仓库上传上去了。</p>
+<p>3.在Github上创建一个仓库，然后下载到本地</p>
+<p>​    在创建仓库时将 <code>Initialize this repository with a README</code> 勾上，<code>Add a license:</code>下拉框选择MIT            License。打开仓库首页单击<code>Clone or download</code>复制SSH地址，进入一个你想作为存放工作区的文件夹输入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone 粘贴刚刚复制的地址</span><br></pre></td></tr></table></figure>
+
+<p>​    运行完后左面会多出一个与你github上仓库同名的文件夹。</p>
+<p>​    将工作区内的变更(增加、删除、改动都是变更)上传到Github的话，只需加上<code>git pull</code> 与<code>git push</code>。完整流程如下：</p>
+<p>​    git add  → git commit → git pull  → git push</p>
 ]]></content>
       <categories>
         <category>工具</category>
@@ -116,8 +140,8 @@
         <category>CSS</category>
       </categories>
       <tags>
-        <tag>CSS选择器</tag>
         <tag>前端</tag>
+        <tag>CSS选择器</tag>
       </tags>
   </entry>
   <entry>
@@ -131,8 +155,8 @@
         <category>CSS</category>
       </categories>
       <tags>
-        <tag>前端</tag>
         <tag>CSS布局</tag>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
