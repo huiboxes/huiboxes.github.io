@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>github使用</title>
+    <title>第一篇博客</title>
     <url>/2019/12/01/github%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<p>声明：本文以实际使用的角度出发，因为短时间内是不太好理解的，使用一定时间后自然就理解了，刚开始比较无趣，只有背命令。纸上得来终觉浅，据知此事要躬行。</p>
 <p>Github是什么？</p>
@@ -40,6 +40,13 @@
 </ul>
 <p>四、使用Git</p>
 ]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+        <tag>使用网站</tag>
+      </tags>
   </entry>
   <entry>
     <title>普通流与盒子模型</title>
