@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://huiboxs.cn/"/>
-  <updated>2019-12-01T12:16:28.917Z</updated>
+  <updated>2019-12-01T12:17:55.679Z</updated>
   <id>https://huiboxs.cn/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>第一篇博客</title>
+    <title>Github使用</title>
     <link href="https://huiboxs.cn/2019/12/01/github%E4%BD%BF%E7%94%A8/"/>
     <id>https://huiboxs.cn/2019/12/01/github%E4%BD%BF%E7%94%A8/</id>
     <published>2019-12-01T12:17:50.000Z</published>
-    <updated>2019-12-01T12:16:28.917Z</updated>
+    <updated>2019-12-01T12:17:55.679Z</updated>
     
     <content type="html"><![CDATA[<p>声明：本文以实际使用的角度出发，因为短时间内是不太好理解的，使用一定时间后自然就理解了，刚开始比较无趣，只有背命令。纸上得来终觉浅，据知此事要躬行。</p><p>Github是什么？</p><p>Github是一个代码托管平台，可以通过此平台找到许多开源项目，可以共享自己的开源项目与他人共同开发、完善，由于只支持Git的版本库格式进行托管，所以名为Github。</p><p>Git是什么？工作流程是什么？</p><p>Git是一个开源的分布式版本控制系统。</p><ul><li><p>Workspace：工作区</p></li><li><p>index/Stage：暂存区</p></li><li><p>Repository：仓库区</p></li><li><p>Remote：远程仓库</p><p>在工作区中修改某些文件 → 对修改后的文件进行快照，然后保存到暂存区 → 提交更新，将保存在暂存区域的文件快照永久转储到Git目录中 → 将本地仓库push到远程仓库</p></li></ul><p>一、准备工作</p><p>1.安装Git Bash：在 <a href="https://gitforwindows.org/" target="_blank" rel="noopener">https://gitforwindows.org/</a> 下载，然后一直下一步就好。</p><p>2.注册Github账户：点这里进入<a href="github.com">官网</a>,英语不好的建议用chrome，翻译挺好用的。注册时全部默认下一步即可，注册完账号就创建一个新仓库，别的都不管，直接默认的选项下一步即可，等后面没事了一定要有空就打开看看，每个都按一下，摸索一下(不要删除仓库和账号就好)。</p><p>二、配置Git Bash：</p><p>依次在输入下面的内容，输一行，按一次回车。</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;***&quot;#双引号内为github的用户名</span><br><span class="line">git config --global user.email &quot;***@gmail.com&quot;#双引号为github的邮箱</span><br><span class="line">git config --global push.default simple#更改push方式</span><br><span class="line">git config --global core.quotepath false#防止文件名变成数字</span><br><span class="line">git config --global core.editor &quot;vim&quot;#使用vim编辑提交信息</span><br></pre></td></tr></table></figure><p>Git Bash只需要在工作目录右击鼠标，然后选Git Bash here即可</p><p>三、配置Github</p><p>1、打开Git Bash  → 输入<code>rm -rf ~/.ssh/*</code>  然后回车把现有的ssh key都删掉（千万不能输错，不然就要重装系      统了）→  输入<code>ssh-keygen -t rsa -b 4096 -c &quot;你的邮箱&quot;</code>  →  按三次回车就创建好了，在根目录下的.ssh      目录中有两个文件，id_rsa是私钥，不能给任何人。</p><p>​      紧接着输入<code>cat ~/.ssh/id_rsa.pub</code> → 从ssh_rsa开始复制全部内容。</p><p>2.打开<code>https://github.com/settings/keys</code>  → 点击New SSH key,title随便输入，在key下的表单内粘贴刚刚复               制的内容，点Add SSH key。</p><p>3.回到Git Bash → 输入<code>ssh -T git@github.com</code>如果提示输入yes/no就输入yes，只要没有看到一串包含                                 successfully的英文，就要重新弄。</p><ul><li>​    如果把key从电脑上删除了，重新生成一个就好了，替换之前的key。</li><li>​    一个电脑只需要一个key。</li><li>​    其他设备如果想的key上传到Github可以和之前的 key共存在Github上</li><li>​    一个key可以访问所有的仓库。</li></ul><p>四、使用Git</p>]]></content>
     
