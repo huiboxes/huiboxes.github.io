@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Github使用</title>
-    <url>/2019/12/01/github%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<p>声明：本文以实际使用的角度出发，因为短时间内是不太好理解的，使用一定时间后自然就理解了，刚开始比较无趣，只有背命令。纸上得来终觉浅，据知此事要躬行。</p>
-<p>Github是什么？</p>
-<p>Github是一个代码托管平台，可以通过此平台找到许多开源项目，可以共享自己的开源项目与他人共同开发、完善，由于只支持Git的版本库格式进行托管，所以名为Github。</p>
-<p>Git是什么？工作流程是什么？</p>
-<p>Git是一个开源的分布式版本控制系统。</p>
+    <title>Github使用方法</title>
+    <url>/2019/12/29/githubTutorial/</url>
+    <content><![CDATA[<h4 id="声明：本文以实际使用的角度出发，因为短时间内是不太好理解的，使用一定时间后自然就理解了，刚开始比较无趣，只有背命令。纸上得来终觉浅，绝知此事要躬行。"><a href="#声明：本文以实际使用的角度出发，因为短时间内是不太好理解的，使用一定时间后自然就理解了，刚开始比较无趣，只有背命令。纸上得来终觉浅，绝知此事要躬行。" class="headerlink" title="声明：本文以实际使用的角度出发，因为短时间内是不太好理解的，使用一定时间后自然就理解了，刚开始比较无趣，只有背命令。纸上得来终觉浅，绝知此事要躬行。"></a><strong>声明：本文以实际使用的角度出发，因为短时间内是不太好理解的，使用一定时间后自然就理解了，刚开始比较无趣，只有背命令。纸上得来终觉浅，绝知此事要躬行。</strong></h4><h5 id="Github是什么？"><a href="#Github是什么？" class="headerlink" title="Github是什么？"></a>Github是什么？</h5><p>​        Github是一个代码托管平台，可以通过此平台找到许多开源项目，可以共享自己的开源项目与他人共同开发、完善，由于只支持Git的版本库格式进行托管，所以名为Github。</p>
+<h5 id="Git是什么？工作流程是什么？"><a href="#Git是什么？工作流程是什么？" class="headerlink" title="Git是什么？工作流程是什么？"></a>Git是什么？工作流程是什么？</h5><p>​        Git是一个开源的分布式版本控制系统。了解工作流程首先要知道四个东西：</p>
 <ul>
 <li><p>Workspace：工作区</p>
 </li>
@@ -16,53 +13,57 @@
 <li><p>Repository：仓库区</p>
 </li>
 <li><p>Remote：远程仓库</p>
-<p>在工作区中修改某些文件 → 对修改后的文件进行快照，然后保存到暂存区 → 提交更新，将保存在暂存区域的文件快照永久转储到Git目录中 → 将本地仓库push到远程仓库</p>
+<p>​        工作流程如下：在工作区中修改某些文件 → 对修改后的文件进行快照，然后保存到暂存区(add) → 提交更新，将保存在暂存区域的文件快照永久转储到Git目录中(仓库)(commit) → 将本地仓库push到远程仓库(push)</p>
 </li>
 </ul>
-<p>一、准备工作</p>
-<p>1.安装Git Bash：在 <a href="https://gitforwindows.org/" target="_blank" rel="noopener">https://gitforwindows.org/</a> 下载，然后一直下一步就好。</p>
-<p>2.注册Github账户：点这里进入<a href="github.com">官网</a>,英语不好的建议用chrome，翻译挺好用的。注册时全部默认下一步即可，注册完账号就创建一个新仓库，别的都不管，直接默认的选项下一步即可，等后面没事了一定要有空就打开看看，每个都按一下，摸索一下(不要删除仓库和账号就好)。</p>
-<p>二、配置Git Bash：</p>
-<p>在命令行依次在输入下面的内容，输一行，按一次回车。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;***&quot;				#双引号内为github的用户名</span><br><span class="line">git config --global user.email &quot;***@gmail.com&quot;	#双引号为github的邮箱</span><br><span class="line">git config --global push.default simple			#更改push方式</span><br><span class="line">git config --global core.quotepath false		#防止文件名变成数字</span><br><span class="line">git config --global core.editor &quot;vim&quot;			#使用vim编辑提交信息</span><br></pre></td></tr></table></figure>
+<h5 id="一、准备工作"><a href="#一、准备工作" class="headerlink" title="一、准备工作"></a>一、准备工作</h5><p>​        1.安装Git Bash：在 <a href="https://gitforwindows.org/" target="_blank" rel="noopener">https://gitforwindows.org/</a> 下载，然后一直下一步就好。</p>
+<p>​        2.注册Github账户：点这里进入<a href="github.com">官网</a>,英语不好的建议用chrome，翻译挺好用的。注册时全部默认下一步即可，注册完账号就创建一个新仓库，别的都不管，直接默认的选项点下一步即可，等后面没事了一定要有空就打开看看，每个都按一下，摸索一下(不要删除仓库和账号就好)。</p>
+<h5 id="二、配置Git-Bash："><a href="#二、配置Git-Bash：" class="headerlink" title="二、配置Git Bash："></a>二、配置Git Bash：</h5><p>​        在命令行依次在输入下面的内容，输一行，按一次回车。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.name "huibox"				  #上传用户的称呼</span><br><span class="line">git config --global user.email "huiboxes@gmail.com"	  #上传用户的邮箱</span><br><span class="line">git config --global push.default simple				  #更改push方式</span><br><span class="line">git config --global core.quotepath false			  #防止文件名变成数字</span><br><span class="line">git config --global core.editor "vim"				  #使用vim编辑提交信息</span><br></pre></td></tr></table></figure>
 
-<p>在任何地方只需要右击鼠标，然后选Git Bash here即可打开一个命令行界面，默认情况打开后就处于当前文件所在位置。命令行内可以运行简单的linux命令。</p>
-<p>三、配置Github</p>
-<p>1、打开Git Bash  → 输入<code>rm -rf ~/.ssh/*</code>  然后回车把现有的ssh key都删掉（千万不能输错，不然就要重装系      统了）→  输入<code>ssh-keygen -t rsa -b 4096 -c &quot;你的邮箱&quot;</code>  →  按三次回车就创建好了，在根目录下的.ssh      目录中有两个文件，id_rsa是私钥，不能给任何人。</p>
-<p>​      紧接着输入<code>cat ~/.ssh/id_rsa.pub</code> → 从ssh_rsa开始复制全部内容。</p>
-<p>2.打开<code>https://github.com/settings/keys</code>  → 点击New SSH key,title随便输入，在key下的表单内粘贴刚刚复               制的内容，点Add SSH key。</p>
-<p>3.回到Git Bash → 输入<code>ssh -T git@github.com</code>如果提示输入yes/no就输入yes，只要没有看到一串包含                                 successfully的英文，就要重新弄。</p>
+<p>​        在任何地方只需要右击鼠标，然后选Git Bash here即可打开一个命令行界面，默认情况打开后就处于当前文件所在位置。命令行内可以运行简单的Linux命令。</p>
+<h5 id="三、配置Github"><a href="#三、配置Github" class="headerlink" title="三、配置Github"></a>三、配置Github</h5><h6 id="1、获取SSH公钥"><a href="#1、获取SSH公钥" class="headerlink" title="1、获取SSH公钥"></a>1、获取SSH公钥</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">rm -rf ~/.ssh/*										  #单击鼠标右键点击Git Bash here后输入</span><br></pre></td></tr></table></figure>
+
+<p>​        千万不能输错，不然就可能要重装系统了，回车后输入</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -c "huiboxes@gmail.com"     #生成ssh key</span><br></pre></td></tr></table></figure>
+
+<p>​        按三次回车，得到ssh key。直接按，这个环节不会有任何错误。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub 								  #屏幕上输出ssh公钥</span><br></pre></td></tr></table></figure>
+
+<p>​        将打印出的内容全部复制下来，在bash终端下复制快捷键为<code>ctrl+insert</code>。在根目录下的.ssh目录中有两个文件，id_rsa是私钥，不要给任何人。</p>
+<h6 id="2、在Github添加公钥"><a href="#2、在Github添加公钥" class="headerlink" title="2、在Github添加公钥"></a>2、在Github添加公钥</h6><p>​        打开<a href="https://github.com/settings/keys" target="_blank" rel="noopener">https://github.com/settings/keys</a>  。点击<code>New SSH key</code>按钮，<code>title</code>随便输入什么，在<code>key</code>下的表单内粘贴刚刚复制的内容，点<code>Add SSH key</code>。</p>
+<h6 id="3、测试是否已对接"><a href="#3、测试是否已对接" class="headerlink" title="3、测试是否已对接"></a>3、测试是否已对接</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com								   #打开Git Bash后输入</span><br></pre></td></tr></table></figure>
+
+<p>​        如果提示输入yes/no就输入yes，只要没有看到一串包含successfully的英文，就要重第一步重新弄。</p>
 <ul>
 <li>​    如果把key从电脑上删除了，重新生成一个就好了，替换之前的key。</li>
 <li>​    一个电脑只需要一个key。</li>
 <li>​    其他设备如果想的key上传到Github可以和之前的 key共存在Github上</li>
 <li>​    一个key可以访问所有的仓库。</li>
 </ul>
-<p>四、使用Git</p>
-<ol>
-<li>本地仓库的使(跟着敲会有奇效)</li>
-</ol>
-<p>​    在你认为合适的盘符下创建一个文件夹，进入该文件夹右击鼠标点Git Bash here(命令行创建的无视这句)。然后    输入<code>git init</code>初始化本地仓库，这个文件夹就成了工作区。文件夹内会多出一个名为<code>.git</code>的隐藏文件夹，不    要动这个隐藏文件。</p>
-<p>​    在工作区内随便创建文件，输入<code>git status -sb</code>后可以看到所创建的文件名前会有两个<code>??</code>，</p>
-<p>​    因为git不知道你后面会怎样对待这些文件的变动（增加、删除、更改都是变动）。</p>
-<p>​    使用<code>git add 你创建的文件名</code>将某个文件添加到暂存区，使用<code>git add .</code>将当前目录里面所有的变动都加到暂    存区。</p>
-<p>​    再次使用<code>git status -sb</code>会看到<code>??</code>变成了A(Add添加的意思)。</p>
-<p>​    使用<code>git commit 你创建的文件名 -m &quot;注释信息，方便以后查看例：first commit&quot;</code>将某个文件提交到本地仓库，    使用<code>git commit .  -m &quot;注释&quot;</code>将当前目录里文件都commit。</p>
-<p>​    修改自己创建的文件后再使用<code>git status -sb</code>会发现提示中有一个”M(Modified修改的意思)”。想保存的话需    要先<code>git add</code> 再<code>git commit</code>。</p>
-<p>2.将本地仓库上传到Github</p>
-<p>​    在文章开头就提到过在Github创建一个仓库，就是为了这一步。进入仓库首页复制你的仓库地址</p>
+<h5 id="四、使用Git"><a href="#四、使用Git" class="headerlink" title="四、使用Git"></a>四、使用Git</h5><h6 id="1、本地仓库的使用-跟着敲会有奇效"><a href="#1、本地仓库的使用-跟着敲会有奇效" class="headerlink" title="1、本地仓库的使用(跟着敲会有奇效)"></a>1、本地仓库的使用(跟着敲会有奇效)</h6><p>​         在你认为合适的盘符下创建一个文件夹，进入该文件夹右击鼠标点Git Bash here。然后输入<code>git init</code><strong>初始化</strong>本地仓库，这个文件夹就成了工作区。使用命令行就简单多了，如下：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd /f								#进入f盘（路径随意）</span><br><span class="line">mkdir fileName						#在当前目录创建名为"fileName"的文件夹（名字叫什么都可以）</span><br><span class="line">cd    fileName						#进入fileName目录</span><br><span class="line">git init							#初始化本地仓库</span><br></pre></td></tr></table></figure>
+
+<p>​        fileName文件夹内会多出一个名为<code>.git</code>的隐藏文件夹，对该文件夹下内容的任何改动都会被git记录，不要动这个隐藏文件。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">touch test							#创建名为test的空文件=windows右键创建没有后缀名的文件</span><br><span class="line">git status -sb						#查看当前目录文件状态</span><br></pre></td></tr></table></figure>
+
+<p>![](C:\Users\H2000\Desktop\git status.png)</p>
+<p>​        可以看到所创建的文件名前会有两个<code>??</code>。因为你还没有对该文件进行过git操作，git不知道你后面会怎样对待这些文件的变动（增加、删除、更改都是变动）。</p>
+<p><img src="C:%5CUsers%5CH2000%5CDesktop%5Cgitadd.png" alt=""></p>
+<p>​        使用<code>git add 你创建的文件名</code>将某个文件<strong>添加</strong>到<strong>暂存区</strong>，使用<code>git add .</code>将当前目录里面所有的变动都加到暂存区。再次使用<code>git status -sb</code>会看到<code>??</code>变成了A(即Add添加)。</p>
+<p>![](C:\Users\H2000\Desktop\git commit.png)</p>
+<p>​        使用<code>git commit 你创建的文件名 -m &quot;注释信息，方便以后查看&quot;</code>将某个文件<strong>提交</strong>到<strong>本地仓库</strong>，使用<code>git commit .  -m &quot;注释&quot;</code>将当前目录里文件都提交到本地仓库。这时再使用<code>git status -sb</code>会发现A变成了<code>M</code>(即Modified修改)。</p>
+<h6 id="2、将本地仓库上传到Github"><a href="#2、将本地仓库上传到Github" class="headerlink" title="2、将本地仓库上传到Github"></a>2、将本地仓库上传到Github</h6><p>​        在文章开头就提到过在Github创建一个仓库，就是为了这一步。进入仓库首页复制你的仓库地址。</p>
 <p><img src="C:%5CUsers%5CH2000%5CDesktop%5C%E6%96%87%E7%AB%A0%5Cimage%5Cgithub.png" alt=""></p>
-<p>​    选这个SSH因为用HTTPS的话以后每次更新都要输入密码。之前上传SSH公钥就是为了用SSH。接下来依次在命    令行输入下面的内容，输一行，按一次回车。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git remote add origin 粘贴你复制的仓库地址</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+<p>​        选这个SSH因为用HTTPS的话以后每次更新都要输入密码。之前上传SSH公钥就是为了用SSH。接下来依次在命令行输入下面的内容。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote add origin git@github.com:huiboxes/test.git	#可以在github复制然后在命令行粘贴</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
 
-<p>刷新Github你会发现你的仓库上传上去了。</p>
-<p>3.在Github上创建一个仓库，然后下载到本地</p>
-<p>​    在创建仓库时将 <code>Initialize this repository with a README</code> 勾上，<code>Add a license:</code>下拉框选择MIT            License。打开仓库首页单击<code>Clone or download</code>复制SSH地址，进入一个你想作为存放工作区的文件夹输入</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone 粘贴刚刚复制的地址</span><br></pre></td></tr></table></figure>
+<p>​        刷新Github你会发现你的仓库上传上去了。</p>
+<h6 id="3、将Github上的仓库克隆到本地"><a href="#3、将Github上的仓库克隆到本地" class="headerlink" title="3、将Github上的仓库克隆到本地"></a>3、将Github上的仓库克隆到本地</h6><p>​        找到一个觉得不错的开源仓库或者自己创建个新仓库，打开仓库首页单击<code>Clone or download</code>复制SSH地址，进入一个你想作为存放工作区的文件夹输入</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone 粘贴刚刚复制的地址</span><br></pre></td></tr></table></figure>
 
-<p>​    运行完后左面会多出一个与你github上仓库同名的文件夹。</p>
-<p>​    将工作区内的变更(增加、删除、改动都是变更)上传到Github的话，只需加上<code>git pull</code> 与<code>git push</code>。完整流程如下：</p>
-<p>​    git add  → git commit → git pull  → git push</p>
+<p>​        运行完后会发现文件夹内多出一个与你github上仓库同名的文件夹。将工作区内的变更(增加、删除、改动都是变更)上传到Github的话，只需加上<code>git pull</code> 与<code>git push</code>。完整流程如下：</p>
+<p>​        <strong>git add  → git commit → git pull  → git push</strong></p>
 ]]></content>
       <categories>
         <category>工具</category>
@@ -73,75 +74,113 @@
       </tags>
   </entry>
   <entry>
-    <title>普通流与盒子模型</title>
-    <url>/2019/11/30/%E6%B5%81%E4%B8%8E%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/</url>
-    <content><![CDATA[<p>流与盒子模型</p>
-<p>问题引导</p>
-<p>1.什么是流？有几种流？</p>
-<p>2.什么是盒子模型？盒子的大小是多少？</p>
-<p>通常情况下，制作一个页面写的所有东西都是紧跟其前一个元素之后的，如同流水一般，这就是默认的布局方式——普通流，也叫常规流。有常规流当然也有非常规的，使用浮动与绝对定位后，元素脱离会脱离普通流(浮动不是完全脱离)，也就是非常规流。这里的普通流不少地方也叫做文档流，其实文档流的说法是因为很多地方将CSS官方文档中的normal flow翻译错了，称为普通流的话更为专业。</p>
-<p>​        网页中所有的文字、图片等内容都是写在标签内的，可以将这些<code>HTML</code>标签看作是一个容器——盒子。通过<code>CSS</code>设置<code>width</code>属性、<code>height</code>属性控制这个盒子的宽高（盒子大了，能装的东西自然会更多）。在这个盒子里可以用<code>padding</code>属性来填充，达到使内容相对于这个盒子居中的效果（既然是填充，当然不能在填充部分放东西）。通过<code>border</code>属性给盒子加边框，美化这个盒子。想控制每个盒子的间距，可以使用<code>margin</code>，控制这个完全透明的“隔板”的厚度。如果未给盒子指定宽高，盒子的大小是根据内容的宽高，假如给盒子盒子固定的宽高，当内容大于盒子时，内容会溢出，盒子不会有任何变化。补充：前面说到网页中所有HTML标签都可看作是一个盒子，那么<body>标签算吗？算的，并且细心观察会发现<body>标签是自带8px的外边距的。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;style&gt;</span><br><span class="line">		div&#123;</span><br><span class="line">			width: 20px;				/* 盒子宽度20像素 */</span><br><span class="line">			height: 20px;				/* 盒子高度20px */</span><br><span class="line">			border: 1px solid black;	/* 给盒子四周加上1像素、黑色实线边框 */</span><br><span class="line">			padding: 2px;				/* 给盒子内部四周填充2像素 */</span><br><span class="line">			margin: 20px;					/* 给盒子外部四周加20像素间距 */</span><br><span class="line">		&#125;</span><br><span class="line">	/* ==========================================================================</span><br><span class="line">       以上是复合属性，一次性同设置加盒子四周。想单独设置盒子某个方向的话在属性后加方向来单独设置</span><br><span class="line">       例如： </span><br><span class="line">       margin-top: 10px;		单独添加外上边距10像素</span><br><span class="line">       margin-right: 10px;		单独添加外右边距10像素</span><br><span class="line">       margin-bottom: 10px;		单独添加外下边距10像素</span><br><span class="line">       margin-left: 10px;		单独添加外左边距10像素</span><br><span class="line">       border与padding以此类推也是同样的方法。</span><br><span class="line">       ========================================================================== */</span><br><span class="line">&lt;style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+    <title>浮动与定位</title>
+    <url>/2019/12/20/floatAndposition/</url>
+    <content><![CDATA[<h5 id="一、浮动"><a href="#一、浮动" class="headerlink" title="一、浮动"></a>一、浮动</h5><p>​       普通流中，因为div是块级元素所以是单独占据一行的，假如我想让两个div在同一行显示怎么办？除了将div改成内联元素外，也可以使用浮动。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">float: none || left || right || inherit;</span><br><span class="line"><span class="comment">/* (默认，就是不浮动)、left(左浮动)、right(右浮动)、inherit(继承父元素的float属性值)。 */</span></span><br></pre></td></tr></table></figure>
 
-<p>上面的盒子实际宽高是多少？</p>
-<p>这要分情况，因为盒子模型分为两种，一种是W3C标准盒模型，还有一种在低版本IE环境下的IE盒模型。两者两者的区别在于W3C盒模型的宽高等于<code>margin+border+padding+content</code>，IE盒模型的宽高等于<code>margin+content</code>。也就是说<code>padding、border</code>是算在IE盒模型的内容部分的。</p>
-<p>上面的盒子按照W3C标准盒模型计算的话是：</p>
-<p>因为宽高设置同样的值，所以宽高都是：20+1<em>2+2</em>2+20*2=46px</p>
-<p>按照IE盒模型计算的话，宽高：20+20*2=40px</p>
-<p>怎样快速理解盒子模型？用尽量少的<div>标签画一个远视图。</p>
+<p>​        设置浮动后它本身会尽可能向左或者右移动，直到碰到边框或者其他的浮动元素。原理是处于普通流的元素会忽略这个浮动的元素紧跟上一个同样处于普通流的元素排版。这样就会造成浮动的元素遮盖住后面仍然处于普通流的元素。以PS图层的概念来理解的话就很好理解了，所有的普通流元素都在同一层，使用浮动后的元素会”浮“上一层，在普通流之上。 不过要注意的是，文字仍然会认为这个浮动的元素存在，为什么呢？其实float设计的初衷是用来实现文字环绕图片的效果(包含文字的元素忽略这个浮动图片，但是文字认为浮动的元素还存在就绕开它排版)。设置浮动后会出现几个现象。</p>
+<ul>
+<li>脱离普通流</li>
+<li>自动变为块级元素</li>
+<li>父容器高度会塌陷也就是父容器height值会变成0(因为仍然处于普通流认为这个浮上去的元素已近不存在了，     随之带来父容器背景无法发显示、margin值也会塌陷、边框无法撑开)</li>
+</ul>
+<p>​        显然父容器塌陷是我们不想看到的，就要清除浮动来解决。这里只演示一种方法。</p>
+<p>​        添加一个新的元素，在新的元素里添加CSS属性——clear: both;意思是在这个元素的左右方向都不能出现浮动元素。不过这样突然添加一个元素的话对代码结构有影响，所以建议使用伪元素。例:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.float</span>&#123;</span></span><br><span class="line">            float: right;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-class">.clearFix</span><span class="selector-pseudo">::after</span>&#123;</span></span><br><span class="line">            content: '';</span><br><span class="line">            clear: both;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrapper .clearFix"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"float"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"float"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>​       </p>
+<h5 id="二、定位"><a href="#二、定位" class="headerlink" title="二、定位"></a>二、定位</h5><p>​        常使用的定位有relative、absolute。简单演示下定位方式：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.demo</span>&#123;</span></span><br><span class="line">            wdith: 100px;</span><br><span class="line">            height: 100px;</span><br><span class="line">            background-color: pink;</span><br><span class="line"><span class="css">            <span class="selector-tag">position</span>: <span class="selector-tag">absolute</span>; 		<span class="comment">/* 使用绝对定位，默认值为static，也就是没有定位 */</span></span></span><br><span class="line"><span class="css">            <span class="selector-tag">right</span>: ;					<span class="comment">/* 相对于父容器右边的距离 */</span></span></span><br><span class="line"><span class="css">            <span class="selector-tag">left</span>: ;						<span class="comment">/* 相对于父容器左边的距离 */</span></span></span><br><span class="line"><span class="css">            <span class="selector-tag">top</span>: ;						<span class="comment">/* 相对于父容器顶部的距离 */</span></span></span><br><span class="line"><span class="css">            <span class="selector-tag">bottom</span>: ; 					<span class="comment">/* 相对于父容器底部的距离 */</span></span></span><br><span class="line"><span class="css">       									<span class="comment">/* 可以是具体的值，比如px、em等，也可以是百分比 */</span></span></span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span>								    <span class="comment">&lt;!-- body也是标签，所以div的父容器是body --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>  <span class="attr">class</span>=<span class="string">“demo”</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>​        它们有一个共同的特点，就是都会脱离普通流。不同之处在于：<br>​        1、设置为<code>absolute</code>的元素会直接在普通流之上，不会影响普通流中的元素。使用<code>relative</code>后该元素虽然会在普通流之上，但是原来所处的位置仍然被占据着。可以这样理解，使用<code>absolute</code>的元素如同上了立交桥的车，从平面上看可以与任意桥下的车(普通流中的元素)重叠。使用<code>relativle</code>后那个车同样上了立交桥，同样可以与任意桥下的车重叠。但是，原来在桥下的停车位交了钱就一直保留着，桥下的车不能停在哪里。</p>
+<p>​        2、absolute元素移动是相对于离它最近的定义了position属性（默认值不算）的父容器进行，如果父容器没有设置position属性，就往更外面设置了定位的盒子。假如它往上面找没有任何元素设置了positon属性，那么它就相对于浏览器窗口的大小来定位（无论body宽高多少）。</p>
+<p>​        再最后补充一个position属性——fixed，在浏览网页时经常看到一直悬浮在窗口某个固定位置的小广告，这种小广告都是使用fixed属性的。脱离普通流，没钱买车位，但是比较霸道的是它是相对于浏览器窗口来定位的。需要注意的是：使用了fixed后，元素的宽度会向内收缩；当有父容器的transform给了属性值时，该元素就会从占据窗口位置变成相对设置了transform的父容器来定位。</p>
 ]]></content>
       <categories>
         <category>CSS</category>
       </categories>
       <tags>
+        <tag>CSS基础</tag>
         <tag>前端</tag>
-        <tag>盒子模型</tag>
-        <tag>流</tag>
       </tags>
   </entry>
   <entry>
-    <title>CSS引入与三种选择器</title>
-    <url>/2019/11/29/CSS%E5%BC%95%E5%85%A5%E4%B8%8E%E4%B8%89%E7%A7%8D%E9%80%89%E6%8B%A9%E5%99%A8/</url>
-    <content><![CDATA[<p>1：为何引用CSS？<br>2：多种选择器作用同一元素时谁会生效？</p>
-<p>掌握了HTML基础，应用起来也可以做出比较不错的页面，但是要做出更加精美的网页还是要依靠CSS，一个网页中所看到的字体、间距、颜色和部分特效等都是由CSS来实现的，通过选择器对文档某个部分添加样式。显然，CSS不能单独使用。把网页比作建房子的话，HTML做出毛胚房，CSS来装修。CSS与HTML是两个语言，引入CSS就是将它们关联在一起。</p>
-<p>CSS由三种引用方式：内嵌、内联、外联。</p>
-<p>1）内嵌</p>
-<blockquote>
-<!--<div style="color: pink;">Hellow world !!!</div>-->
-</blockquote>
-<p>优先级最高,但是当网页内容变多后，想要更改样式就比较费时间。并且只能给单个标签使用。不建议使用这种方式。</p>
-<p>2）内联</p>
-<style>
-    div{color: black;}/* 所有div内的字体颜色都改为黑色 */
-</style>
+    <title>流与盒子模型</title>
+    <url>/2019/12/11/flowAndBox/</url>
+    <content><![CDATA[<h3 id="流"><a href="#流" class="headerlink" title="流"></a>流</h3><p>​        通常情况下，制作一个页面写的所有东西都是紧跟其前一个元素之后的，如同流水一般。如果是内联元素，从左往右排版，如果页面宽度不够，就换行继续。如果是块级元素，从上向下，每个元素都独占一行。这就是默认的布局方式——普通流，也叫常规流。页面的传统布局就是依靠控制流来实现横向、纵向布局。有常规流当然也有非常规的，使用浮动与定位后，元素会脱离普通流(浮动不是完全脱离)，也就是非常规流。这里的普通流不少地方也叫做文档流，其实文档流的说法是因为很多地方将CSS官方文档中的normal flow翻译错了，称为普通流的话更为专业。</p>
+<p>​        前面提到脱离普通流，这个概念有点抽象。脱离普通流的元素与普通流中的元素的位置关系可以看作是PSD文件中不同的图层。可以通过<code>index</code>属性来调整脱离普通流后元素在第几层，使用定位后才能使用<code>index</code>属性。</p>
+<h3 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h3><p>​        网页中所有的文字、图片等内容都是写在<code>HTML</code>标签内的，可以将这些标签看作是一个容器——盒子。这个盒子的大小是多少呢？默认情况下，如果是块级元素，高度与内容高度相等，与页面同宽。如果是内联元素，可以简单的看作与内容区域同宽高。通过<code>CSS</code>设置<code>width</code>属性、<code>height</code>属性控制这个盒子内部（内容区域）的宽高（内部空间大了，整个盒子自然也大了）。可以通过向这个盒子使用<code>padding</code>属性来添加填充，达到使内容相对于这个盒子居中的效果（既然是填充，当然不能在填充部分放东西）。通过<code>border</code>属性给盒子加边框，美化这个盒子。想控制每个盒子的间距，可以使用<code>margin</code>，控制这个完全透明的“隔板”的厚度。假如给盒子盒子固定的宽高，当内容大于盒子时，内容会溢出，盒子不会有任何变化。补充：前面说到网页中所有<code>HTML</code>标签都可看作是一个盒子，那么<code>body</code>标签算吗？算的，并且细心观察会发现<code>body</code>标签是自带8px的外边距的。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">	div&#123;</span><br><span class="line"><span class="css">		<span class="selector-tag">width</span>: 20<span class="selector-tag">px</span>;				<span class="comment">/* 盒子内容区域宽度20像素 */</span></span></span><br><span class="line"><span class="css">		<span class="selector-tag">height</span>: 20<span class="selector-tag">px</span>;				<span class="comment">/* 盒子内容区域高度20px */</span></span></span><br><span class="line"><span class="css">		<span class="selector-tag">border</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">black</span> <span class="selector-tag">solid</span>;	<span class="comment">/* 给盒子四周加上1像素、黑色实线边框 */</span></span></span><br><span class="line"><span class="css">		<span class="selector-tag">padding</span>: 2<span class="selector-tag">px</span>;				<span class="comment">/* 给盒子内部四周填充2像素 */</span></span></span><br><span class="line"><span class="css">		<span class="selector-tag">margin</span>: 20<span class="selector-tag">px</span>;					<span class="comment">/* 给盒子外部四周加20像素间距 */</span></span></span><br><span class="line">	&#125;</span><br><span class="line">	/* ==========================================================================</span><br><span class="line">       以上是复合属性，一次性同设置加盒子四周。想单独设置盒子某个方向的话在属性后加方向来单独设置</span><br><span class="line">       例如： </span><br><span class="line">       margin-top: 10px;		单独添加外上边距10像素</span><br><span class="line">       margin-right: 10px;		单独添加外右边距10像素</span><br><span class="line">       margin-bottom: 10px;		单独添加外下边距10像素</span><br><span class="line">       margin-left: 10px;		单独添加外左边距10像素</span><br><span class="line">       border与padding以此类推也是同样的方法。</span><br><span class="line">       ========================================================================== */</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
-<p>在<head>部分添加<style></style>标签，在标签内直接写CSS，在代码量少时为了方便可以这样，为了规范还是不建议使用这种方式。</p>
-<p>3)外联</p>
-<p>将CSS单独写在.css文件中，通过HTML的<link>标签从外部导入到。</p>
-<link rel="stylesheet" type="text/css" href="./fileName.css"/>
-
-<p>符合“结构样式行为相分离”，规范并且便于后期维护。</p>
-<p>通常情况下如果同时用多种方法给同一个元素设置相同的属性但是不同的属性值时，会优先显示内嵌的样式，然后就是内联，最后才是外联。也就是说在优先级方面，内嵌&gt;内联&gt;外联。</p>
-<p>上学的时候老师依靠同学的名字或者位置准确的叫某位同学回答问题.CSS也是如此,依靠选择器对网页中的每一个HTML元素添加样式.最最常见的选择器有以下三种</p>
-<p>1.标签选择器</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">    body&#123;</span><br><span class="line"><span class="css">        <span class="selector-tag">color</span>: <span class="selector-tag">black</span>;			<span class="comment">/* body标签内所有元素字体颜色改为black */</span></span></span><br><span class="line"><span class="css">        <span class="selector-tag">margin</span>: 0;				<span class="comment">/* body标签内所有元素边距为0 */</span></span></span><br><span class="line"><span class="css">        <span class="selector-tag">padding</span>: 0;				<span class="comment">/* body标签内所有元素填充为0 */</span></span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>直接在HTML某种标签后加花括号,文档内所有此类标签都会生效.写代码讲究”高内聚弱耦合”,如果几行代码都实现同样的功能,可以简化就简化.比如网页中HTML中的a标签默认是带下划线并且是蓝色的,然而这显然不符合现代人的审美,通常都会用一个标签选择器来去掉下划线,改下字体样式.</p>
-<p>2.<code>id</code>选择器</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">        <span class="selector-id">#demo</span>&#123;<span class="attribute">color</span>: pink;&#125;   <span class="comment">/* 在id名前加个 # ,优先级较高 */</span></span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--&lt;div id="demo"&gt;&lt;/div&gt;--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>在标签中加<code>id=&quot;id-name&quot;</code> 标签就有了自己的<code>id</code>,在<code>id</code>名前加一个<code>＃</code> 即可为拥有这个<code>id</code>值的所有属性添加样式.不过为了规范,通常一个<code>id</code>只给一个标签,保证其唯一性,就如同每个人的身份证号码一般.</p>
-<p>3.<code>class</code>选择器(类选择器)</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.demo</span>&#123;<span class="attribute">color</span>: pink;&#125;   <span class="comment">/* 在class名前加个 .  */</span></span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--&lt;div class="demo"&gt;&lt;/div&gt;--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>不难看出,与<code>id</code>选择器十分类似.那么它们的区别在哪儿呢?能直观看出区别的就是<code>id</code>选择器的优先级比<code>class</code>选择器高.为了使结构更加明确,通常多个元素要用相同的样式时用<code>class</code>,那么单一的元素—最好也使用<code>class</code>.通常<code>id</code>是给<code>JavaScript</code>用的.</p>
-<p>在优先级方面,标签选择器.标签选择器一次针对的对象可能会非常多,优先级自然不会高,然后就是<code>class</code>,”唯一”的<code>id</code>优先级当然是最高的,<code>id</code>选择器&gt;<code>class</code>选择器&gt;.</p>
+<p>上面的盒子实际宽高是多少？</p>
+<p>​        这要分情况，因为盒子模型分为两种，一种是W3C标准盒模型，还有一种在低版本IE环境下的IE盒模型。两者两者的区别在于W3C盒模型的宽高等于<strong>内容+填充+边框+边距</strong>的总和。IE盒模型的宽高等于<strong>内容+边距</strong>，IE盒模型的填充和边框呢？IE盒模型将填充和边框都算在内容区域的。如果找到Windows 2000系统的主机，用其自带的IE浏览器就会发现，同样的属性，在现代浏览器与低版本IE的宽高是不一样的。</p>
+<p>​        上面的盒子按照W3C标准盒模型计算的话是：</p>
+<p>​        因为宽高设置同样的值，所以宽高都是：<code>20+1*2+2*2+20*2=46px</code> ;按照IE盒模型计算的话，宽高：<code>20+20*2=40px</code>。怎样快速理解盒子模型？用尽量少的<div>标签画一个远视图。</p>
 ]]></content>
       <categories>
         <category>CSS</category>
       </categories>
       <tags>
+        <tag>CSS基础</tag>
         <tag>前端</tag>
-        <tag>CSS选择器</tag>
+        <tag>盒子模型</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS引入与选择器</title>
+    <url>/2019/12/04/CSSreferenceAndSelector/</url>
+    <content><![CDATA[<h6 id="一、CSS引入"><a href="#一、CSS引入" class="headerlink" title="一、CSS引入"></a>一、CSS引入</h6><p>​        掌握了HTML基础，已可以做出简单的页面，但是要做出更加精美的网页还是要依靠<code>CSS</code>，一个网页中所看到的字体、间距、颜色和部分特效等都是由<code>CSS</code>来实现的，通过选择器对文档某个部分添加样式。显然，<code>CSS</code>不能单独使用。把网页比作建房子的话，HTML做出毛胚房，<code>CSS</code>来装修。<code>CSS</code>与<code>HTML</code>是两个语言，引入<code>CSS</code>就是将它们关联在一起。</p>
+<p>​        <code>CSS</code>有四种引用方式：内嵌、内联、外联、导入。</p>
+<p>​        1）内嵌</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"color: pink;"</span>&gt;</span>Hellow world !!!<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>​        给单个标签使用，因为十分具体所以优先级最高。但是当网页内容变多后，想要更改样式就比较费时间。不利于更改样式、不利于<a href="[https://baike.baidu.com/item/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E4%BC%98%E5%8C%96/3132?fr=aladdin](https://baike.baidu.com/item/搜索引擎优化/3132?fr=aladdin)">SEO</a>。不建议使用这种方式。</p>
+<p>​        2）内联</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">    <span class="selector-tag">div</span>&#123;<span class="attribute">color</span>: pink;&#125;			<span class="comment">/* color为更改字体颜色 */</span></span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<p>​        在<code>head</code>部分添加<code>style</code>标签，在标签内直接写<code>CSS</code>，在代码量少时为了方便可以这样，为了规范还是不建议使用这种方式。</p>
+<p>​        3）外联</p>
+<p>​        将CSS单独写在.css文件中，通过HTML的<link>标签从外部导入到。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"./style.css"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>​        符合“结构样式行为相分离”，规范并且便于后期维护。</p>
+<p>​        4）导入</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 在CSS文件导入 */</span></span><br><span class="line">@<span class="keyword">import</span> url(style.css);</span><br><span class="line"><span class="comment">/* 在html文件内导入 */</span></span><br><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">    @<span class="keyword">import</span> url(style.css);</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<p>​        与外联相似，都是导入外部文件。不过导入优先级比外联低，过多使用会延长浏览器渲染页面的时间。</p>
+<p>​        优先级方面，内嵌 &gt; 内联 &gt; 外联 &gt; 导入。也就是说通常情况下如果同时用多种方法给同一个元素设置相同的属性但是不同的属性值时，会优先显示内嵌的样式，没有内嵌样式的话就是内联，接着是外联，最后就是导入。</p>
+<h6 id="二、CSS选择器"><a href="#二、CSS选择器" class="headerlink" title="二、CSS选择器"></a>二、CSS选择器</h6><p>​        上学的时候老师依靠同学的名字或者位置准确的叫某位同学回答问题。<code>CSS</code>也是如此,依靠选择器对网页中的每一个<code>HTML</code>元素添加样式。写代码讲究”高内聚弱耦合”,如果几行代码都实现同样的功能,可以简化就简化。所以选择器我就从范围最广到最小来介绍，最常见的选择器有以下几种：</p>
+<p>​        1、通配符选择器</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">*&#123;							<span class="comment">/* 针对所有元素 */</span></span><br><span class="line">     <span class="attribute">margin</span>: <span class="number">0</span>;				<span class="comment">/* 所有元素边距为0 */</span>  <span class="comment">/*body、ol、table、form等标签自带maring*/</span></span><br><span class="line">     <span class="attribute">padding</span>: <span class="number">0</span>;			<span class="comment">/* 所有元素填充为0 */</span>  <span class="comment">/*option、textarea等标签自带padding*/</span></span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<p>​        <code>*</code>在计算机中通常是当作通配符用的，代表N个字符(无论长短)。也就是说文档内所有元素都会被添加上通配符选择器内的<code>CSS</code>属性。为了方便布局，通常都会将所有元素自带的<code>margin</code>、<code>padding</code>都去掉。为了方便直接使用通配符选择器来完成，但是当页面内标签多的话理论上是影响页面性能的。生产环境中通常都会有“初始化<code>CSS</code>文件”，文件主要内容就是使用标签选择器具体指定某个标签清除自带样式。</p>
+<p>​        2、标签选择器</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line"><span class="selector-tag">a</span>&#123;							<span class="comment">/* 针对所有a标签 */</span></span><br><span class="line">	<span class="attribute">text-decoration</span>: none;	<span class="comment">/* 将所有a标签下划线去掉 */</span></span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<p>​        直接在HTML某个标签后加花括号。网页中HTML中的a标签默认是带下划线并且是蓝色的,然而这显然不符合现代人的审美。通常都会用一个标签选择器来去掉下划线,改下字体样式。</p>
+<p>​        3、属性选择器</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">input</span><span class="selector-attr">[name="danxuan"]</span>&#123;		<span class="comment">/* 标签  +  [属性] */</span></span></span><br><span class="line"><span class="css">        <span class="selector-tag">font-weight</span>: 700;		<span class="comment">/* 针对input标签内有name属性并且值为duanxuan的标签 */</span></span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>​        如果用了标签选择器后想再具体点对带有某个属性的元素进行操作，可以使用属性选择器。类似于老师指定了班上的男同学打扫卫生，再单独指定长得高的都去擦窗户。</p>
+<p>4、<code>class</code>选择器(类选择器)</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.demo</span>&#123;<span class="attribute">color</span>: pink;&#125;   <span class="comment">/* 在class名前加个 .  */</span></span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"demo"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>​        在标签中加<code>class=&quot;class-name&quot;</code>，标签就有了自己的类名。多个标签可以有相同的类名。这个类名不能以数字、”-“和“_”开头，不过可以用中文甚至是emoji表情命名。当然，为了符合规范还是以有意义的单词来命名最好。给标签选择器加类名可以理解为将某些同学分到到指定的组，指定某个组的同学打扫卫生。</p>
+<p>​        5、<code>id</code>选择器</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">        <span class="selector-id">#demo</span>&#123;<span class="attribute">color</span>: pink;&#125;   <span class="comment">/* 在id名前加个 # */</span></span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"demo"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>​        在标签中加<code>id=&quot;id-name&quot;</code> 标签就有了自己的<code>id</code>。多个标签可以有相同的id不过为了规范,通常一个<code>id</code>只给一个标签,保证其唯一性,就如同每个人的身份证号码一般。</p>
+<p>小结：</p>
+<p>​        在优先级方面，针对的对象多，优先级自然不会高。”唯一“的id选择器优先级最高。如下：</p>
+<p>​         <strong><code>id</code>选择器&gt;<code>class</code>选择器&gt;属性选择器&gt;标签选择器&gt;通配符选择器</strong></p>
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS基础</tag>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -155,14 +194,14 @@
         <category>CSS</category>
       </categories>
       <tags>
-        <tag>CSS布局</tag>
         <tag>前端</tag>
+        <tag>CSS布局</tag>
       </tags>
   </entry>
   <entry>
     <title>第一篇博客</title>
-    <url>/2019/11/10/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<p>&emsp;&emsp;一时兴起想弄个博客，个人空间吗，主要用于记录平时的学习、生活。时不时发一点所学的，或者新的感悟，等以后回过头看复习，或许也能勉励一下自己。为什么我不想用QQ空间了呢？我现在认为比起QQ空间来说Blog更加自由，更加的开放却又隐私。往后我将会把每个月的周安排都发到Blog上，进一步提醒自己。<br>&emsp;&emsp;<img src="2019-11plan.png" alt=""><br>&emsp;&emsp;11月的bilibili要改成acfun了，因为听说Rick and Morty新一季要出来了。此外我打算囫囵吞枣的把Linux学一遍，如果有事找我，在上课和培训的时候我一般不会回复，等有时间了如果有能力我十分乐意帮忙解决。对了，这是我的第一篇Blog，有点小激动，可以在评论区留下你对我本人的看法、及意见。最好能留下对我的第一映像和我的缺点哦，十分感谢！</p>
+    <url>/2019/11/10/firstblog/</url>
+    <content><![CDATA[<p>&emsp;&emsp;一时兴起想弄个博客，个人空间吗，主要用于记录平时的学习、生活。时不时发一点所学的，或者新的感悟，等以后回过头看复习，或许也能勉励一下自己。为什么我不想用QQ空间了呢？我现在认为比起QQ空间来说Blog更加自由，更加的开放却又隐私。往后我可能会将每个月的周安排都发到Blog上，进一步提醒自己。<br>&emsp;&emsp;<img src="2019-11plan.png" alt=""><br>&emsp;&emsp;11月的bilibili要改成acfun了，因为听说Rick and Morty新一季要出来了。此外我打算囫囵吞枣的把Linux学一遍，如果有事找我，在上课和培训的时候我一般不会回复，等有时间了如果有能力我十分乐意帮忙解决。对了，这是我的第一篇Blog，有点小激动，可以在评论区留下你对我本人的看法、及意见。最好能留下对我的第一映像和我的缺点哦，十分感谢！</p>
 ]]></content>
       <categories>
         <category>心情</category>
