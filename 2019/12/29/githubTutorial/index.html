@@ -89,11 +89,11 @@
 <meta property="og:site_name" content="ShaohuiのBlog">
 <meta property="og:description" content="声明：本文以实际使用的角度出发，因为短时间内是不太好理解的，使用一定时间后自然就理解了，刚开始比较无趣，只有背命令。纸上得来终觉浅，绝知此事要躬行。Github是什么？​        Github是一个代码托管平台，可以通过此平台找到许多开源项目，可以共享自己的开源项目与他人共同开发、完善，由于只支持Git的版本库格式进行托管，所以名为Github。 Git是什么？工作流程是什么？​">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="c:%5CUsers%5CH2000%5CDesktop%5Cgitadd.png">
-<meta property="og:image" content="c:%5CUsers%5CH2000%5CDesktop%5C%E6%96%87%E7%AB%A0%5Cimage%5Cgithub.png">
-<meta property="og:updated_time" content="2020-01-06T08:31:34.722Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;huiboxs.cn&#x2F;2019&#x2F;12&#x2F;29&#x2F;githubTutorial&#x2F;gitadd.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;huiboxs.cn&#x2F;2019&#x2F;12&#x2F;29&#x2F;githubTutorial&#x2F;github.png">
+<meta property="og:updated_time" content="2020-01-16T14:47:24.019Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="c:%5CUsers%5CH2000%5CDesktop%5Cgitadd.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;huiboxs.cn&#x2F;2019&#x2F;12&#x2F;29&#x2F;githubTutorial&#x2F;gitadd.png">
 
 
 
@@ -433,14 +433,14 @@
 <p>​        fileName文件夹内会多出一个名为<code>.git</code>的隐藏文件夹，对该文件夹下内容的任何改动都会被git记录，不要动这个隐藏文件。</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">touch test							#创建名为test的空文件=windows右键创建没有后缀名的文件</span><br><span class="line">git status -sb						#查看当前目录文件状态</span><br></pre></td></tr></table></figure>
 
-<p>![](C:\Users\H2000\Desktop\git status.png)</p>
+<p>![](git status.png)</p>
 <p>​        可以看到所创建的文件名前会有两个<code>??</code>。因为你还没有对该文件进行过git操作，git不知道你后面会怎样对待这些文件的变动（增加、删除、更改都是变动）。</p>
-<p><img src="C:%5CUsers%5CH2000%5CDesktop%5Cgitadd.png" alt=""></p>
+<p><img src="gitadd.png" alt=""></p>
 <p>​        使用<code>git add 你创建的文件名</code>将某个文件<strong>添加</strong>到<strong>暂存区</strong>，使用<code>git add .</code>将当前目录里面所有的变动都加到暂存区。再次使用<code>git status -sb</code>会看到<code>??</code>变成了A(即Add添加)。</p>
-<p>![](C:\Users\H2000\Desktop\git commit.png)</p>
+<p>![](git commit.png)</p>
 <p>​        使用<code>git commit 你创建的文件名 -m &quot;注释信息，方便以后查看&quot;</code>将某个文件<strong>提交</strong>到<strong>本地仓库</strong>，使用<code>git commit .  -m &quot;注释&quot;</code>将当前目录里文件都提交到本地仓库。这时再使用<code>git status -sb</code>会发现A变成了<code>M</code>(即Modified修改)。</p>
 <h6 id="2、将本地仓库上传到Github"><a href="#2、将本地仓库上传到Github" class="headerlink" title="2、将本地仓库上传到Github"></a>2、将本地仓库上传到Github</h6><p>​        在文章开头就提到过在Github创建一个仓库，就是为了这一步。进入仓库首页复制你的仓库地址。</p>
-<p><img src="C:%5CUsers%5CH2000%5CDesktop%5C%E6%96%87%E7%AB%A0%5Cimage%5Cgithub.png" alt=""></p>
+<p><img src="github.png" alt=""></p>
 <p>​        选这个SSH因为用HTTPS的话以后每次更新都要输入密码。之前上传SSH公钥就是为了用SSH。接下来依次在命令行输入下面的内容。</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote add origin git@github.com:huiboxes/test.git	#可以在github复制然后在命令行粘贴</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
 
