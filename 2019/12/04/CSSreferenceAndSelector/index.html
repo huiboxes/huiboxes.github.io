@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="CSS基础,前端," />
+  <meta name="keywords" content="前端,CSS基础," />
 
 
 
@@ -81,15 +81,15 @@
 
 
 
-<meta name="description" content="一、CSS引入​        掌握了HTML基础，已可以做出简单的页面，但是要做出更加精美的网页还是要依靠CSS，一个网页中所看到的字体、间距、颜色和部分特效等都是由CSS来实现的，通过选择器对文档某个部分添加样式。显然，CSS不能单独使用。把网页比作建房子的话，HTML做出毛胚房，CSS来装修。CSS与HTML是两个语言，引入CSS就是将它们关联在一起。 ​        CSS有四种引用方式">
-<meta name="keywords" content="CSS基础,前端">
+<meta name="description" content="一、CSS 引入&amp;emsp;&amp;emsp;掌握了 HTML 基础，已可以做出简单的页面，但是要做出更加精美的网页还是要依靠CSS，一个网页中所看到的字体、间距、颜色和部分特效等都是由CSS来实现的，通过选择器对文档某个部分添加样式。显然，CSS不能单独使用。把网页比作建房子的话，HTML 做出毛胚房，CSS来装修。CSS与HTML是两个语言，引入CSS就是将它们关联在一起。 &amp;emsp;&amp;emsp;">
+<meta name="keywords" content="前端,CSS基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS引入与选择器">
 <meta property="og:url" content="https:&#x2F;&#x2F;huiboxs.cn&#x2F;2019&#x2F;12&#x2F;04&#x2F;CSSreferenceAndSelector&#x2F;index.html">
 <meta property="og:site_name" content="ShaohuiのBlog">
-<meta property="og:description" content="一、CSS引入​        掌握了HTML基础，已可以做出简单的页面，但是要做出更加精美的网页还是要依靠CSS，一个网页中所看到的字体、间距、颜色和部分特效等都是由CSS来实现的，通过选择器对文档某个部分添加样式。显然，CSS不能单独使用。把网页比作建房子的话，HTML做出毛胚房，CSS来装修。CSS与HTML是两个语言，引入CSS就是将它们关联在一起。 ​        CSS有四种引用方式">
+<meta property="og:description" content="一、CSS 引入&amp;emsp;&amp;emsp;掌握了 HTML 基础，已可以做出简单的页面，但是要做出更加精美的网页还是要依靠CSS，一个网页中所看到的字体、间距、颜色和部分特效等都是由CSS来实现的，通过选择器对文档某个部分添加样式。显然，CSS不能单独使用。把网页比作建房子的话，HTML 做出毛胚房，CSS来装修。CSS与HTML是两个语言，引入CSS就是将它们关联在一起。 &amp;emsp;&amp;emsp;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-01-06T08:30:38.472Z">
+<meta property="og:updated_time" content="2020-02-18T10:34:08.091Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -386,50 +386,50 @@
       
 
       
-        <h6 id="一、CSS引入"><a href="#一、CSS引入" class="headerlink" title="一、CSS引入"></a>一、CSS引入</h6><p>​        掌握了HTML基础，已可以做出简单的页面，但是要做出更加精美的网页还是要依靠<code>CSS</code>，一个网页中所看到的字体、间距、颜色和部分特效等都是由<code>CSS</code>来实现的，通过选择器对文档某个部分添加样式。显然，<code>CSS</code>不能单独使用。把网页比作建房子的话，HTML做出毛胚房，<code>CSS</code>来装修。<code>CSS</code>与<code>HTML</code>是两个语言，引入<code>CSS</code>就是将它们关联在一起。</p>
-<p>​        <code>CSS</code>有四种引用方式：内嵌、内联、外联、导入。</p>
-<p>​        1）内嵌</p>
+        <h6 id="一、CSS-引入"><a href="#一、CSS-引入" class="headerlink" title="一、CSS 引入"></a>一、CSS 引入</h6><p>&emsp;&emsp;掌握了 HTML 基础，已可以做出简单的页面，但是要做出更加精美的网页还是要依靠<code>CSS</code>，一个网页中所看到的字体、间距、颜色和部分特效等都是由<code>CSS</code>来实现的，通过选择器对文档某个部分添加样式。显然，<code>CSS</code>不能单独使用。把网页比作建房子的话，HTML 做出毛胚房，<code>CSS</code>来装修。<code>CSS</code>与<code>HTML</code>是两个语言，引入<code>CSS</code>就是将它们关联在一起。</p>
+<p>&emsp;&emsp;<code>CSS</code>有四种引用方式：内嵌、内联、外联、导入。</p>
+<p>​&emsp;&emsp;1）内嵌</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"color: pink;"</span>&gt;</span>Hellow world !!!<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>​        给单个标签使用，因为十分具体所以优先级最高。但是当网页内容变多后，想要更改样式就比较费时间。不利于更改样式、不利于<a href="[https://baike.baidu.com/item/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E4%BC%98%E5%8C%96/3132?fr=aladdin](https://baike.baidu.com/item/搜索引擎优化/3132?fr=aladdin)">SEO</a>。不建议使用这种方式。</p>
-<p>​        2）内联</p>
+<p>​ 给单个标签使用，因为十分具体所以优先级最高。但是当网页内容变多后，想要更改样式就比较费时间。不利于更改样式、不利于<a href="[https://baike.baidu.com/item/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E4%BC%98%E5%8C%96/3132?fr=aladdin](https://baike.baidu.com/item/搜索引擎优化/3132?fr=aladdin)">SEO</a>。不建议使用这种方式。</p>
+<p>​&emsp;&emsp;2）内联</p>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">    <span class="selector-tag">div</span>&#123;<span class="attribute">color</span>: pink;&#125;			<span class="comment">/* color为更改字体颜色 */</span></span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
 
-<p>​        在<code>head</code>部分添加<code>style</code>标签，在标签内直接写<code>CSS</code>，在代码量少时为了方便可以这样，为了规范还是不建议使用这种方式。</p>
-<p>​        3）外联</p>
-<p>​        将CSS单独写在.css文件中，通过HTML的<link>标签从外部导入到。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"./style.css"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<p>​&emsp;&emsp;在<code>head</code>部分添加<code>style</code>标签，在标签内直接写<code>CSS</code>，在代码量少时为了方便可以这样，为了规范还是不建议使用这种方式。</p>
+<p>​&emsp;&emsp;3）外联</p>
+<p>​&emsp;&emsp;将 CSS 单独写在.css 文件中，通过 HTML 的<link>标签从外部导入到。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"./style.css"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>​        符合“结构样式行为相分离”，规范并且便于后期维护。</p>
-<p>​        4）导入</p>
+<p>​&emsp;&emsp;符合“结构样式行为相分离”，规范并且便于后期维护。</p>
+<p>​&emsp;&emsp;4）导入</p>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 在CSS文件导入 */</span></span><br><span class="line">@<span class="keyword">import</span> url(style.css);</span><br><span class="line"><span class="comment">/* 在html文件内导入 */</span></span><br><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">    @<span class="keyword">import</span> url(style.css);</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
 
-<p>​        与外联相似，都是导入外部文件。不过导入优先级比外联低，过多使用会延长浏览器渲染页面的时间。</p>
-<p>​        优先级方面，内嵌 &gt; 内联 &gt; 外联 &gt; 导入。也就是说通常情况下如果同时用多种方法给同一个元素设置相同的属性但是不同的属性值时，会优先显示内嵌的样式，没有内嵌样式的话就是内联，接着是外联，最后就是导入。</p>
-<h6 id="二、CSS选择器"><a href="#二、CSS选择器" class="headerlink" title="二、CSS选择器"></a>二、CSS选择器</h6><p>​        上学的时候老师依靠同学的名字或者位置准确的叫某位同学回答问题。<code>CSS</code>也是如此,依靠选择器对网页中的每一个<code>HTML</code>元素添加样式。写代码讲究”高内聚弱耦合”,如果几行代码都实现同样的功能,可以简化就简化。所以选择器我就从范围最广到最小来介绍，最常见的选择器有以下几种：</p>
-<p>​        1、通配符选择器</p>
+<p>​&emsp;&emsp;与外联相似，都是导入外部文件。不过导入优先级比外联低，过多使用会延长浏览器渲染页面的时间。</p>
+<p>​&emsp;&emsp;优先级方面，内嵌 &gt; 内联 &gt; 外联 &gt; 导入。也就是说通常情况下如果同时用多种方法给同一个元素设置相同的属性但是不同的属性值时，会优先显示内嵌的样式，没有内嵌样式的话就是内联，接着是外联，最后就是导入。</p>
+<h6 id="二、CSS-选择器"><a href="#二、CSS-选择器" class="headerlink" title="二、CSS 选择器"></a>二、CSS 选择器</h6><p>​&emsp;&emsp;上学的时候老师依靠同学的名字或者位置准确的叫某位同学回答问题。<code>CSS</code>也是如此,依靠选择器对网页中的每一个<code>HTML</code>元素添加样式。写代码讲究”高内聚弱耦合”,如果几行代码都实现同样的功能,可以简化就简化。所以选择器我就从范围最广到最小来介绍，最常见的选择器有以下几种：</p>
+<p>​&emsp;&emsp;1、通配符选择器</p>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">*&#123;							<span class="comment">/* 针对所有元素 */</span></span><br><span class="line">     <span class="attribute">margin</span>: <span class="number">0</span>;				<span class="comment">/* 所有元素边距为0 */</span>  <span class="comment">/*body、ol、table、form等标签自带maring*/</span></span><br><span class="line">     <span class="attribute">padding</span>: <span class="number">0</span>;			<span class="comment">/* 所有元素填充为0 */</span>  <span class="comment">/*option、textarea等标签自带padding*/</span></span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
 
-<p>​        <code>*</code>在计算机中通常是当作通配符用的，代表N个字符(无论长短)。也就是说文档内所有元素都会被添加上通配符选择器内的<code>CSS</code>属性。为了方便布局，通常都会将所有元素自带的<code>margin</code>、<code>padding</code>都去掉。为了方便直接使用通配符选择器来完成，但是当页面内标签多的话理论上是影响页面性能的。生产环境中通常都会有“初始化<code>CSS</code>文件”，文件主要内容就是使用标签选择器具体指定某个标签清除自带样式。</p>
-<p>​        2、标签选择器</p>
+<p>​&emsp;&emsp;<code>*</code>在计算机中通常是当作通配符用的，代表 N 个字符(无论长短)。也就是说文档内所有元素都会被添加上通配符选择器内的<code>CSS</code>属性。为了方便布局，通常都会将所有元素自带的<code>margin</code>、<code>padding</code>都去掉。为了方便直接使用通配符选择器来完成，但是当页面内标签多的话理论上是影响页面性能的。生产环境中通常都会有“初始化<code>CSS</code>文件”，文件主要内容就是使用标签选择器具体指定某个标签清除自带样式。</p>
+<p>​&emsp;&emsp;2、标签选择器</p>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line"><span class="selector-tag">a</span>&#123;							<span class="comment">/* 针对所有a标签 */</span></span><br><span class="line">	<span class="attribute">text-decoration</span>: none;	<span class="comment">/* 将所有a标签下划线去掉 */</span></span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
 
-<p>​        直接在HTML某个标签后加花括号。网页中HTML中的a标签默认是带下划线并且是蓝色的,然而这显然不符合现代人的审美。通常都会用一个标签选择器来去掉下划线,改下字体样式。</p>
-<p>​        3、属性选择器</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">input</span><span class="selector-attr">[name="danxuan"]</span>&#123;		<span class="comment">/* 标签  +  [属性] */</span></span></span><br><span class="line"><span class="css">        <span class="selector-tag">font-weight</span>: 700;		<span class="comment">/* 针对input标签内有name属性并且值为duanxuan的标签 */</span></span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>​&emsp;&emsp;直接在 HTML 某个标签后加花括号。网页中 HTML 中的 a 标签默认是带下划线并且是蓝色的,然而这显然不符合现代人的审美。通常都会用一个标签选择器来去掉下划线,改下字体样式。</p>
+<p>​&emsp;&emsp;3、属性选择器</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">  <span class="selector-tag">input</span><span class="selector-attr">[name="danxuan"]</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="comment">/* 标签  +  [属性] */</span></span></span><br><span class="line"><span class="css">    <span class="selector-tag">font-weight</span>: 700; <span class="comment">/* 针对input标签内有name属性并且值为duanxuan的标签 */</span></span></span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>​        如果用了标签选择器后想再具体点对带有某个属性的元素进行操作，可以使用属性选择器。类似于老师指定了班上的男同学打扫卫生，再单独指定长得高的都去擦窗户。</p>
+<p>​&emsp;&emsp;如果用了标签选择器后想再具体点对带有某个属性的元素进行操作，可以使用属性选择器。类似于老师指定了班上的男同学打扫卫生，再单独指定长得高的都去擦窗户。</p>
 <p>4、<code>class</code>选择器(类选择器)</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.demo</span>&#123;<span class="attribute">color</span>: pink;&#125;   <span class="comment">/* 在class名前加个 .  */</span></span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"demo"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.demo</span> &#123;</span></span><br><span class="line">      color: pink;</span><br><span class="line"><span class="css">    &#125; <span class="comment">/* 在class名前加个 .  */</span></span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"demo"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>​        在标签中加<code>class=&quot;class-name&quot;</code>，标签就有了自己的类名。多个标签可以有相同的类名。这个类名不能以数字、”-“和“_”开头，不过可以用中文甚至是emoji表情命名。当然，为了符合规范还是以有意义的单词来命名最好。给标签选择器加类名可以理解为将某些同学分到到指定的组，指定某个组的同学打扫卫生。</p>
-<p>​        5、<code>id</code>选择器</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">        <span class="selector-id">#demo</span>&#123;<span class="attribute">color</span>: pink;&#125;   <span class="comment">/* 在id名前加个 # */</span></span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"demo"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>​&emsp;&emsp;在标签中加<code>class=&quot;class-name&quot;</code>，标签就有了自己的类名。多个标签可以有相同的类名。这个类名不能以数字、”-“和“_”开头，不过可以用中文甚至是 emoji 表情命名。当然，为了符合规范还是以有意义的单词来命名最好。给标签选择器加类名可以理解为将某些同学分到到指定的组，指定某个组的同学打扫卫生。</p>
+<p>​&emsp;&emsp;5、<code>id</code>选择器</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="selector-id">#demo</span> &#123;</span></span><br><span class="line">      color: pink;</span><br><span class="line"><span class="css">    &#125; <span class="comment">/* 在id名前加个 # */</span></span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"demo"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>​        在标签中加<code>id=&quot;id-name&quot;</code> 标签就有了自己的<code>id</code>。多个标签可以有相同的id不过为了规范,通常一个<code>id</code>只给一个标签,保证其唯一性,就如同每个人的身份证号码一般。</p>
+<p>&emsp;&emsp;在标签中加<code>id=&quot;id-name&quot;</code> 标签就有了自己的<code>id</code>。多个标签可以有相同的 id 不过为了规范,通常一个<code>id</code>只给一个标签,保证其唯一性,就如同每个人的身份证号码一般。</p>
 <p>小结：</p>
-<p>​        在优先级方面，针对的对象多，优先级自然不会高。”唯一“的id选择器优先级最高。如下：</p>
-<p>​         <strong><code>id</code>选择器&gt;<code>class</code>选择器&gt;属性选择器&gt;标签选择器&gt;通配符选择器</strong></p>
+<p>&emsp;&emsp;在优先级方面，针对的对象多，优先级自然不会高。”唯一“的 id 选择器优先级最高。如下：</p>
+<p>&emsp;&emsp;<strong><code>id</code>选择器&gt;<code>class</code>选择器&gt;属性选择器&gt;标签选择器&gt;通配符选择器</strong></p>
 
       
     </div>
@@ -447,9 +447,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/CSS%E5%9F%BA%E7%A1%80/" rel="tag"># CSS基础</a>
-          
             <a href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag"># 前端</a>
+          
+            <a href="/tags/CSS%E5%9F%BA%E7%A1%80/" rel="tag"># CSS基础</a>
           
         </div>
       
@@ -620,7 +620,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#一、CSS引入"><span class="nav-number">1.</span> <span class="nav-text">一、CSS引入</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#二、CSS选择器"><span class="nav-number">2.</span> <span class="nav-text">二、CSS选择器</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#一、CSS-引入"><span class="nav-number">1.</span> <span class="nav-text">一、CSS 引入</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#二、CSS-选择器"><span class="nav-number">2.</span> <span class="nav-text">二、CSS 选择器</span></a></li></ol></div>
             
 
           </div>
