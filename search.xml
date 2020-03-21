@@ -3,16 +3,15 @@
   <entry>
     <title>jQuery快速入门</title>
     <url>/2020/03/15/jQuery/</url>
-    <content><![CDATA[<p>​        jQuery是一个非常轻量级的JavaScript框架，设计宗旨“write Less，Do More”（写更少的代码，做更多的事）。jQuery提供的API用起来比DOM API舒服太多，而且可以兼容IE6，是一个非常值得学习的一个JavaScript库。下面我将自己实现一个超简洁版的jQuery。</p>
-<h2 id="一、选择网页元素"><a href="#一、选择网页元素" class="headerlink" title="一、选择网页元素"></a>一、选择网页元素</h2><p>​        jQuery选择元素非常舒服，通常采用<code>$(*)</code>的方式获取。*可以是标签也可以是CSS选择器。</p>
+    <content><![CDATA[<p>&emsp;&emsp;jQuery 是一个非常轻量级的 JavaScript 框架，设计宗旨“write Less，Do More”（写更少的代码，做更多的事）。jQuery 提供的 API 用起来比 DOM API 舒服太多，而且可以兼容 IE6，是一个非常值得学习的一个 JavaScript 库。下面我将自己实现一个超简洁版的 jQuery。</p>
+<h2 id="一、选择网页元素"><a href="#一、选择网页元素" class="headerlink" title="一、选择网页元素"></a>一、选择网页元素</h2><p>&emsp;&emsp;jQuery 选择元素非常舒服，通常采用<code>$(*)</code>的方式获取。*可以是标签也可以是 CSS 选择器。</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">window</span>.$ = <span class="function"><span class="keyword">function</span> (<span class="params">nodeOrSelector</span>)</span>&#123;	<span class="comment">// 给全局对象加一个$方法</span></span><br><span class="line">    <span class="keyword">let</span> nodes = &#123;&#125;	<span class="comment">// 可能需要操作多个节点，所以初始化节点为对象</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> nodeOrSelector === <span class="string">"string"</span>)<span class="comment">// 判断传的参数是否为字符串（CSS选择器）</span></span><br><span class="line">    <span class="keyword">let</span> temp = <span class="built_in">document</span>.querySelectorAll(nodeOrSelector);<span class="comment">// 用DOM API获取节点</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; temp.length; i++) &#123;</span><br><span class="line">      nodes[i] = temp[i];	<span class="comment">// 将获取到的所有节点放入nodes</span></span><br><span class="line">    &#125;</span><br><span class="line">      nodes.length = temp.length;  <span class="comment">// 让nodes像个伪数组方便以后操作</span></span><br><span class="line">  	&#125; <span class="keyword">else</span> <span class="keyword">if</span> (nodeOrSelector <span class="keyword">instanceof</span> Node) &#123; <span class="comment">// 判断传入的参数是否为Node节点</span></span><br><span class="line">      nodes = &#123;</span><br><span class="line">        <span class="number">0</span>: nodeOrSelector,	<span class="comment">// 直接付给nodes伪数组</span></span><br><span class="line">      	length: <span class="number">1</span></span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> nodes	<span class="comment">// 将nodes对象暴露出去</span></span><br><span class="line">	 ···   <span class="comment">// 添加其它方法直接在后面加函数，操作nodes（获取的节点）即可</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>​        在window上加属性（函数），在函数内用到所有的变量名都与全局作用域内的变量无关，避免了污染全局作用域。只暴露出关键部分，细节在函数内其他人无法直接修改，避免出现问题。</p>
-<h2 id="二、添加方法"><a href="#二、添加方法" class="headerlink" title="二、添加方法"></a>二、添加方法</h2><p>​        其实后面的方法都换汤不换药了，把完成某功能用DOM API操作元素的方法封装成函数即可。封装好的函数直接添加到nodes对象上，以后调用函数就是飞一般的感觉（一行代替几行甚至十几行）。</p>
-<h3 id="addClass方法"><a href="#addClass方法" class="headerlink" title="addClass方法"></a>addClass方法</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">nodes.addClass = <span class="function"><span class="keyword">function</span> (<span class="params">classes</span>) </span>&#123;		<span class="comment">// 接收传入的class（以数组的形式）</span></span><br><span class="line">   classes.forEach(<span class="function"><span class="params">value</span> =&gt;</span> &#123;				</span><br><span class="line">     <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; nodes.length; i++) &#123;</span><br><span class="line">       nodes[i].classList.add(value);		<span class="comment">// 遍历数组，依次将class加到节点上</span></span><br><span class="line">     &#125;			</span><br><span class="line">   &#125;);</span><br><span class="line"> &#125;;</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;在 window 上加属性（函数），在函数内用到所有的变量名都与全局作用域内的变量无关，避免了污染全局作用域。只暴露出关键部分，细节在函数内其他人无法直接修改，避免出现问题。</p>
+<h2 id="二、添加方法"><a href="#二、添加方法" class="headerlink" title="二、添加方法"></a>二、添加方法</h2><p>&emsp;&emsp;其实后面的方法都换汤不换药了，把完成某功能用 DOM API 操作元素的方法封装成函数即可。封装好的函数直接添加到 nodes 对象上，以后调用函数就是飞一般的感觉（一行代替几行甚至十几行）。</p>
+<h3 id="addClass-方法"><a href="#addClass-方法" class="headerlink" title="addClass 方法"></a>addClass 方法</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">nodes.addClass = <span class="function"><span class="keyword">function</span>(<span class="params">classes</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 接收传入的class（以数组的形式）</span></span><br><span class="line">  classes.forEach(<span class="function"><span class="params">value</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; nodes.length; i++) &#123;</span><br><span class="line">      nodes[i].classList.add(value); <span class="comment">// 遍历数组，依次将class加到节点上</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<h3 id="ajax方法"><a href="#ajax方法" class="headerlink" title="ajax方法"></a>ajax方法</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">nodes.ajax = <span class="function"><span class="keyword">function</span> (<span class="params">&#123; url, method, body, Headers &#125;</span>) </span>&#123;	<span class="comment">// 接受请求必要的参数</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>) </span>&#123;	   <span class="comment">// 返回Promise对象，方便异步操作</span></span><br><span class="line">      <span class="keyword">let</span> request = <span class="keyword">new</span> XMLHttpRequest()；</span><br><span class="line">      request.open(method, url);</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> Headers) &#123;</span><br><span class="line">        <span class="keyword">let</span> value = Headers[key];</span><br><span class="line">        request.setRequestHeader(key, value);		  <span class="comment">// 设置请求头</span></span><br><span class="line">      &#125;</span><br><span class="line">      request.onreadystatechange = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (request.readyState === <span class="number">4</span>) &#123;</span><br><span class="line">          <span class="keyword">if</span> (request.status &gt;= <span class="number">200</span> &amp;&amp; request.status &lt; <span class="number">300</span>) &#123;</span><br><span class="line">            resolve(request.responseText);			  <span class="comment">// 请求成功时调用resolve</span></span><br><span class="line">          &#125; <span class="keyword">else</span> <span class="keyword">if</span> (request.status &gt;= <span class="number">400</span>) &#123;</span><br><span class="line">            reject(request);						  <span class="comment">// 请求失败时调用reject</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;);</span><br><span class="line">    request.send(body);</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure>
-
+<h3 id="ajax-方法"><a href="#ajax-方法" class="headerlink" title="ajax 方法"></a>ajax 方法</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">nodes.ajax = <span class="function"><span class="keyword">function</span> (<span class="params">&#123; url, method, body, Headers &#125;</span>) </span>&#123;	<span class="comment">// 接受请求必要的参数</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>) </span>&#123;	   <span class="comment">// 返回Promise对象，方便异步操作</span></span><br><span class="line">      <span class="keyword">let</span> request = <span class="keyword">new</span> XMLHttpRequest()；</span><br><span class="line">      request.open(method, url);</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> Headers) &#123;</span><br><span class="line">        <span class="keyword">let</span> value = Headers[key];</span><br><span class="line">        request.setRequestHeader(key, value);		  <span class="comment">// 设置请求头</span></span><br><span class="line">      &#125;</span><br><span class="line">      request.onreadystatechange = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (request.readyState === <span class="number">4</span>) &#123;</span><br><span class="line">          <span class="keyword">if</span> (request.status &gt;= <span class="number">200</span> &amp;&amp; request.status &lt; <span class="number">300</span>) &#123;</span><br><span class="line">            resolve(request.responseText);			  <span class="comment">// 请求成功时调用resolve</span></span><br><span class="line">          &#125; <span class="keyword">else</span> <span class="keyword">if</span> (request.status &gt;= <span class="number">400</span>) &#123;</span><br><span class="line">            reject(request);						  <span class="comment">// 请求失败时调用reject</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;);</span><br><span class="line">    request.send(body);</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>前端框架</category>
@@ -54,8 +53,8 @@
       </categories>
       <tags>
         <tag>前端</tag>
-        <tag>面向对象</tag>
         <tag>JavaScript</tag>
+        <tag>面向对象</tag>
       </tags>
   </entry>
   <entry>
@@ -306,8 +305,8 @@
         <category>CSS</category>
       </categories>
       <tags>
-        <tag>前端</tag>
         <tag>CSS基础</tag>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -327,8 +326,8 @@
         <category>CSS</category>
       </categories>
       <tags>
-        <tag>前端</tag>
         <tag>CSS基础</tag>
+        <tag>前端</tag>
         <tag>盒子模型</tag>
       </tags>
   </entry>
@@ -384,8 +383,8 @@
         <category>CSS</category>
       </categories>
       <tags>
-        <tag>前端</tag>
         <tag>CSS基础</tag>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
