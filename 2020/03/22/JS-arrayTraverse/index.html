@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="JS方法,前端,JavaScript," />
 
 
 
@@ -81,14 +81,15 @@
 
 
 
-<meta name="description" content="记录学习生活">
-<meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="https:&#x2F;&#x2F;huiboxs.cn&#x2F;tags&#x2F;index.html">
+<meta name="description" content="&amp;emsp;&amp;emsp;简单汇总下JavaScript遍历数组的方法： 一、forlet arr = [&amp;apos;h&amp;apos;,&amp;apos;u&amp;apos;,&amp;apos;i&amp;apos;]for(let i = 0;len = arr.length,i &amp;lt; len;i++)&amp;#123;	console.log(arr[i])&amp;#125;  &amp;emsp;&amp;emsp;老生常谈的方法，如果不对数组长度进行更改可以先将长度保存起来，优化性能。 二、for i">
+<meta name="keywords" content="JS方法,前端,JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS遍历数组方法">
+<meta property="og:url" content="https:&#x2F;&#x2F;huiboxs.cn&#x2F;2020&#x2F;03&#x2F;22&#x2F;JS-arrayTraverse&#x2F;index.html">
 <meta property="og:site_name" content="ShaohuiのBlog">
-<meta property="og:description" content="记录学习生活">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;简单汇总下JavaScript遍历数组的方法： 一、forlet arr = [&amp;apos;h&amp;apos;,&amp;apos;u&amp;apos;,&amp;apos;i&amp;apos;]for(let i = 0;len = arr.length,i &amp;lt; len;i++)&amp;#123;	console.log(arr[i])&amp;#125;  &amp;emsp;&amp;emsp;老生常谈的方法，如果不对数组长度进行更改可以先将长度保存起来，优化性能。 二、for i">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-11T00:12:43.534Z">
+<meta property="og:updated_time" content="2020-03-30T05:47:15.471Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://huiboxs.cn/tags/"/>
+  <link rel="canonical" href="https://huiboxs.cn/2020/03/22/JS-arrayTraverse/"/>
 
 
 
 
 
-  <title>标签 | ShaohuiのBlog</title>
+  <title>JS遍历数组方法 | ShaohuiのBlog</title>
   
 
 
@@ -274,33 +275,194 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://huiboxs.cn/2020/03/22/JS-arrayTraverse/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shaohui">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/tx.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShaohuiのBlog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">标签</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
+          <h1 class="post-title" itemprop="name headline">JS遍历数组方法</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-22T12:11:43+08:00">
+                2020-03-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-      </div>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/22/JS-arrayTraverse/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/22/JS-arrayTraverse/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>&emsp;&emsp;简单汇总下JavaScript遍历数组的方法：</p>
+<h2 id="一、for"><a href="#一、for" class="headerlink" title="一、for"></a>一、for</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">'h'</span>,<span class="string">'u'</span>,<span class="string">'i'</span>]</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;len = arr.length,i &lt; len;i++)&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(arr[i])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>&emsp;&emsp;老生常谈的方法，如果不对数组长度进行更改可以先将长度保存起来，优化性能。</p>
+<h2 id="二、for-in"><a href="#二、for-in" class="headerlink" title="二、for in"></a>二、for in</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">'h'</span>,<span class="string">'u'</span>,<span class="string">'i'</span>]</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">in</span> arr)&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(arr[i]) <span class="comment">// 'h','u','i'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>&emsp;&emsp;for in 可以将数组或者对象遍历一遍，i表示每次循环中对应的键（’h’键是0，’u’是1，’i’是2…）。某些时候，循环顺序是随机的。</p>
+<h2 id="三、for-of"><a href="#三、for-of" class="headerlink" title="三、for of"></a>三、for of</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">'h'</span>,<span class="string">'u'</span>,<span class="string">'i'</span>]</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">of</span> arr)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i) <span class="comment">// 'h','u','i'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>&emsp;&emsp;与for in 很相似，不过i对应的是值。可以配合break、continue与return。在遍历数组或者可迭代对象时使用for of显得更为合适。</p>
+<h2 id="四、forEach"><a href="#四、forEach" class="headerlink" title="四、forEach"></a>四、forEach</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">'h'</span>,<span class="string">'u'</span>,<span class="string">'i'</span>]</span><br><span class="line">arr.forEach(<span class="function">(<span class="params">item,index,arr</span>)=&gt;</span>&#123;		<span class="comment">// 可以传入三个参数，参数名随意。</span></span><br><span class="line">    <span class="built_in">console</span>.log(item,index,arr)</span><br><span class="line">    <span class="comment">// h 0 ["h", "u", "i"]</span></span><br><span class="line">    <span class="comment">// u 1 ["h", "u", "i"]						</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>&emsp;&emsp;forEach方法对数组每个元素执行一次传入的函数的操作。必须传入至少一个形参，表示正在处理的当前元素。第二个表示当前元素的索引，第三个时当前操作的数组。</p>
+<h2 id="五、map"><a href="#五、map" class="headerlink" title="五、map"></a>五、map</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">'h'</span>,<span class="string">'u'</span>,<span class="string">'i'</span>]</span><br><span class="line">arr.mep(<span class="function">(<span class="params">item,index,arr</span>)=&gt;</span>&#123;		   <span class="comment">// 可以传入三个参数，参数名随意。</span></span><br><span class="line">	<span class="built_in">console</span>.log(item,index,arr)</span><br><span class="line">    <span class="comment">// h 0 ["h", "u", "i"]</span></span><br><span class="line">    <span class="comment">// u 1 ["h", "u", "i"]</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;看起来forEach很相似，区别在于：forEach是可以直接在回调里更改原始数组的元素。map是有返回值的（返回新的数组，地址值不同）。</p>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JS%E6%96%B9%E6%B3%95/" rel="tag"># JS方法</a>
+          
+            <a href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag"># 前端</a>
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/03/15/jQuery/" rel="next" title="jQuery快速入门">
+                <i class="fa fa-chevron-left"></i> jQuery快速入门
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -309,6 +471,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -329,8 +498,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -401,6 +579,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、for"><span class="nav-number">1.</span> <span class="nav-text">一、for</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、for-in"><span class="nav-number">2.</span> <span class="nav-text">二、for in</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、for-of"><span class="nav-number">3.</span> <span class="nav-text">三、for of</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、forEach"><span class="nav-number">4.</span> <span class="nav-text">四、forEach</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、map"><span class="nav-number">5.</span> <span class="nav-text">五、map</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

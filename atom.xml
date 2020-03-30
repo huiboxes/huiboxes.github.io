@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://huiboxs.cn/"/>
-  <updated>2020-03-21T15:04:32.573Z</updated>
+  <updated>2020-03-30T05:47:15.471Z</updated>
   <id>https://huiboxs.cn/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JS遍历数组方法</title>
+    <link href="https://huiboxs.cn/2020/03/22/JS-arrayTraverse/"/>
+    <id>https://huiboxs.cn/2020/03/22/JS-arrayTraverse/</id>
+    <published>2020-03-22T04:11:43.000Z</published>
+    <updated>2020-03-30T05:47:15.471Z</updated>
+    
+    <content type="html"><![CDATA[<p>&emsp;&emsp;简单汇总下JavaScript遍历数组的方法：</p><h2 id="一、for"><a href="#一、for" class="headerlink" title="一、for"></a>一、for</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">'h'</span>,<span class="string">'u'</span>,<span class="string">'i'</span>]</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;len = arr.length,i &lt; len;i++)&#123;</span><br><span class="line"><span class="built_in">console</span>.log(arr[i])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>&emsp;&emsp;老生常谈的方法，如果不对数组长度进行更改可以先将长度保存起来，优化性能。</p><h2 id="二、for-in"><a href="#二、for-in" class="headerlink" title="二、for in"></a>二、for in</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">'h'</span>,<span class="string">'u'</span>,<span class="string">'i'</span>]</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">in</span> arr)&#123;</span><br><span class="line"><span class="built_in">console</span>.log(arr[i]) <span class="comment">// 'h','u','i'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>&emsp;&emsp;for in 可以将数组或者对象遍历一遍，i表示每次循环中对应的键（’h’键是0，’u’是1，’i’是2…）。某些时候，循环顺序是随机的。</p><h2 id="三、for-of"><a href="#三、for-of" class="headerlink" title="三、for of"></a>三、for of</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">'h'</span>,<span class="string">'u'</span>,<span class="string">'i'</span>]</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">of</span> arr)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i) <span class="comment">// 'h','u','i'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>&emsp;&emsp;与for in 很相似，不过i对应的是值。可以配合break、continue与return。在遍历数组或者可迭代对象时使用for of显得更为合适。</p><h2 id="四、forEach"><a href="#四、forEach" class="headerlink" title="四、forEach"></a>四、forEach</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">'h'</span>,<span class="string">'u'</span>,<span class="string">'i'</span>]</span><br><span class="line">arr.forEach(<span class="function">(<span class="params">item,index,arr</span>)=&gt;</span>&#123;<span class="comment">// 可以传入三个参数，参数名随意。</span></span><br><span class="line">    <span class="built_in">console</span>.log(item,index,arr)</span><br><span class="line">    <span class="comment">// h 0 ["h", "u", "i"]</span></span><br><span class="line">    <span class="comment">// u 1 ["h", "u", "i"]</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><p>&emsp;&emsp;forEach方法对数组每个元素执行一次传入的函数的操作。必须传入至少一个形参，表示正在处理的当前元素。第二个表示当前元素的索引，第三个时当前操作的数组。</p><h2 id="五、map"><a href="#五、map" class="headerlink" title="五、map"></a>五、map</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">'h'</span>,<span class="string">'u'</span>,<span class="string">'i'</span>]</span><br><span class="line">arr.mep(<span class="function">(<span class="params">item,index,arr</span>)=&gt;</span>&#123;   <span class="comment">// 可以传入三个参数，参数名随意。</span></span><br><span class="line"><span class="built_in">console</span>.log(item,index,arr)</span><br><span class="line">    <span class="comment">// h 0 ["h", "u", "i"]</span></span><br><span class="line">    <span class="comment">// u 1 ["h", "u", "i"]</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><p>&emsp;&emsp;看起来forEach很相似，区别在于：forEach是可以直接在回调里更改原始数组的元素。map是有返回值的（返回新的数组，地址值不同）。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&amp;emsp;&amp;emsp;简单汇总下JavaScript遍历数组的方法：&lt;/p&gt;
+&lt;h2 id=&quot;一、for&quot;&gt;&lt;a href=&quot;#一、for&quot; class=&quot;headerlink&quot; title=&quot;一、for&quot;&gt;&lt;/a&gt;一、for&lt;/h2&gt;&lt;figure class=&quot;hig
+      
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://huiboxs.cn/categories/JavaScript/"/>
+    
+    
+      <category term="JS方法" scheme="https://huiboxs.cn/tags/JS%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="前端" scheme="https://huiboxs.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="JavaScript" scheme="https://huiboxs.cn/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>jQuery快速入门</title>
@@ -40,9 +71,9 @@
     
       <category term="前端" scheme="https://huiboxs.cn/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="框架" scheme="https://huiboxs.cn/tags/%E6%A1%86%E6%9E%B6/"/>
-    
       <category term="JavaScript" scheme="https://huiboxs.cn/tags/JavaScript/"/>
+    
+      <category term="框架" scheme="https://huiboxs.cn/tags/%E6%A1%86%E6%9E%B6/"/>
     
       <category term="jQuery" scheme="https://huiboxs.cn/tags/jQuery/"/>
     
@@ -251,9 +282,9 @@
       <category term="CSS" scheme="https://huiboxs.cn/categories/CSS/"/>
     
     
-      <category term="CSS基础" scheme="https://huiboxs.cn/tags/CSS%E5%9F%BA%E7%A1%80/"/>
-    
       <category term="前端" scheme="https://huiboxs.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="CSS基础" scheme="https://huiboxs.cn/tags/CSS%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
@@ -279,9 +310,9 @@
       <category term="CSS" scheme="https://huiboxs.cn/categories/CSS/"/>
     
     
-      <category term="CSS基础" scheme="https://huiboxs.cn/tags/CSS%E5%9F%BA%E7%A1%80/"/>
-    
       <category term="前端" scheme="https://huiboxs.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="CSS基础" scheme="https://huiboxs.cn/tags/CSS%E5%9F%BA%E7%A1%80/"/>
     
       <category term="盒子模型" scheme="https://huiboxs.cn/tags/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/"/>
     
@@ -309,9 +340,9 @@
       <category term="CSS" scheme="https://huiboxs.cn/categories/CSS/"/>
     
     
-      <category term="CSS基础" scheme="https://huiboxs.cn/tags/CSS%E5%9F%BA%E7%A1%80/"/>
-    
       <category term="前端" scheme="https://huiboxs.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="CSS基础" scheme="https://huiboxs.cn/tags/CSS%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
