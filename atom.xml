@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://huiboxs.cn/"/>
-  <updated>2020-03-30T05:47:15.471Z</updated>
+  <updated>2020-03-30T13:27:12.843Z</updated>
   <id>https://huiboxs.cn/</id>
   
   <author>
@@ -15,6 +15,62 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python数据类型</title>
+    <link href="https://huiboxs.cn/2020/03/29/PY-DateType/"/>
+    <id>https://huiboxs.cn/2020/03/29/PY-DateType/</id>
+    <published>2020-03-29T09:57:00.000Z</published>
+    <updated>2020-03-30T13:27:12.843Z</updated>
+    
+    <content type="html"><![CDATA[<p>&emsp;&emsp;Python3中有六个标准的数据类型：<code>Number</code>（数字型）、<code>String</code>（字符串）、<code>List</code>（列表）、<code>Tuple</code>（元组）、<code>Set</code>（集合）、<code>Dictionary</code>（字典）。 </p><h2 id="Number（数字）"><a href="#Number（数字）" class="headerlink" title="Number（数字）"></a>Number（数字）</h2><p>&emsp;&emsp;在<code>Python3</code>中，数字分为<code>int</code>、<code>float</code>、<code>bool</code>、<code>complex</code>。所有的整数都在int范围内（<code>-∞~∞</code>），如果内存足够<code>Python</code>可以表示任意长度的数字。<code>float</code>表示小数，可以使用科学计数标志e或E表示，如 <code>1.2e+10</code> 。<code>True</code>和<code>False</code>（也可以是<code>0</code>和<code>1</code>）是<code>bool</code>型。<code>Python</code>的复数常量写成实部+虚部的写法，虚部以j或J结尾如 <code>3+4j，3J</code>，通常不会用到复数。</p><p>&emsp;&emsp;<code>Python</code>中整数可以以十进制、二进制、八进制、十六进制表示。</p><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="number">0b11</span><span class="comment"># 二进制是以0b开头的，表示十进制的3</span></span><br><span class="line"><span class="number">0o11</span><span class="comment"># 八进制是以0o开头的，表示十进制的9</span></span><br><span class="line"><span class="number">0x11</span><span class="comment"># 十六进制是以0x开头的，表示十进制的17</span></span><br></pre></td></tr></table></figure><h2 id="String（字符串）"><a href="#String（字符串）" class="headerlink" title="String（字符串）"></a>String（字符串）</h2><p>&emsp;&emsp;字符串是单个字符的字符串的序列。以下此种都是字符串，三个单引号与三个双引号可以定义多行字符串，单个自能用来定义单行字符串。</p><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">' string '</span></span><br><span class="line"><span class="string">" string "</span></span><br><span class="line"><span class="string">''' string '''</span></span><br><span class="line"><span class="string">""" string """</span></span><br></pre></td></tr></table></figure><p>&emsp;&emsp;可以使用<code>format</code>和<code>%</code>进行格式化。</p><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">'8+1=&#123;i&#125;'</span>.format&#123;<span class="number">5</span>+<span class="number">3</span>&#125; <span class="comment"># i相当于1个占位符</span></span><br><span class="line"><span class="string">'5+3=%i'</span>%(<span class="number">5</span>+<span class="number">3</span>)  <span class="comment"># i是类型</span></span><br></pre></td></tr></table></figure><p>&emsp;&emsp;字符串可以用<code>len()</code>获取字符串中字符的个数（字符串长度）。</p><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">s1 = <span class="string">'hjk'</span></span><br><span class="line">print(len(s1)) <span class="comment"># 输出3</span></span><br></pre></td></tr></table></figure><p>&emsp;&emsp;字符串中某些字符需要用转义符来表示：</p><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">'\n '</span>)<span class="comment"># 换行符，将光标位置移到下一行开头。</span></span><br><span class="line">print(<span class="string">'\r '</span>)<span class="comment"># 回车符，将光标位置移到本行开头。</span></span><br><span class="line">print(<span class="string">'\t '</span>)<span class="comment"># 水平制表符，也即 Tab 键，一般相当于四个空格。</span></span><br><span class="line">print(<span class="string">'\b '</span>)<span class="comment"># 退格（Backspace），将光标位置移到前一列。</span></span><br><span class="line">print(<span class="string">'\' '</span>)<span class="comment"># 单引号</span></span><br><span class="line">print(<span class="string">'\''</span> <span class="string">')# 双引号</span></span><br><span class="line"><span class="string">print('</span>\\ <span class="string">')# \符号</span></span><br><span class="line"><span class="string">print('</span>\a <span class="string">')# 在控制台输出电脑会响一声</span></span><br></pre></td></tr></table></figure><h2 id="List（列表）"><a href="#List（列表）" class="headerlink" title="List（列表）"></a>List（列表）</h2><p>&emsp;&emsp;列表是一个任意类型的对象的位置相关的有序集合，它没有固定的大小。与<code>JavaScript</code>中的数组很类似，里面可以放任意类型的元素。</p><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">student = [<span class="string">'张三'</span>,<span class="string">'李四'</span>,<span class="string">'王五'</span>]</span><br><span class="line">worker = [<span class="string">'孙七'</span>,<span class="string">'周天'</span>]</span><br></pre></td></tr></table></figure><p>&emsp;&emsp;更改列表的长度可以通过下面的方式：</p><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">student.append(<span class="string">'赵六'</span>)   <span class="comment"># 向列表后增加一个元素 ['张三','李四','王五','赵六']</span></span><br><span class="line">student.extend(worker)  <span class="comment"># 向列表后追加一个列表 ['张三','李四','王五','赵六','孙七','周天']</span></span><br><span class="line">student.insert(<span class="number">2</span>,<span class="string">'吴九'</span>) <span class="comment"># 向列表第3个位置插入一个元素 ['张三','李四','吴九','王五',...]</span></span><br><span class="line"><span class="keyword">del</span> student[<span class="number">1</span>]          <span class="comment"># 删除列表第2个元素 ['张三','吴九','王五',...]</span></span><br><span class="line">student.pop()<span class="comment"># 删除列表追最后一个元素，可以在方法内传入一个索引，删除索引处元素</span></span><br><span class="line">student.remove(<span class="string">"张三"</span>)   <span class="comment"># 删除列表中的张三，如果列表中没有要删除的元素就会报错</span></span><br></pre></td></tr></table></figure><h2 id="Tuple（元组）"><a href="#Tuple（元组）" class="headerlink" title="Tuple（元组）"></a>Tuple（元组）</h2><p>&emsp;&emsp;与列表类似，但是元组的元素是不能修改的。</p><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">numbers = (<span class="number">100</span>,<span class="number">200</span>)</span><br></pre></td></tr></table></figure><h2 id="Dict（字典）"><a href="#Dict（字典）" class="headerlink" title="Dict（字典）"></a>Dict（字典）</h2><p>&emsp;&emsp;与<code>JavaScript</code>中的对象很相似，字典是一系列键值对的组合（哈希表），<code>Python</code>中任何对象都可以作为字典的值。</p><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">student = &#123;</span><br><span class="line">    <span class="string">'name'</span>: <span class="string">'xiaoming'</span>,</span><br><span class="line">    <span class="string">'gender'</span>: <span class="string">'male'</span><span class="comment">#如果后面有重复的键，后面的值会覆盖前面的值</span></span><br><span class="line">&#125;</span><br><span class="line">print(student[<span class="string">'name'</span>])<span class="comment"># 输出xiaoming</span></span><br></pre></td></tr></table></figure><h2 id="Set（集合）"><a href="#Set（集合）" class="headerlink" title="Set（集合）"></a>Set（集合）</h2><p>&emsp;&emsp;集合是一个无序不，重复元素的序列。 集合使用大括号{}表示 ,与字典类似，但是只有键，没有值，所以要元素不重复。通常用来 关系测试和消除重复元素 。要声明一个空集合要用<code>set()</code>方法，也可以用它将列表转换成集合。</p><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">li = [<span class="number">3</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">9</span>,<span class="number">7</span>]</span><br><span class="line">se1 = &#123;<span class="number">4</span>,<span class="number">9</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>&#125;</span><br><span class="line">print(set(li))  <span class="comment"># 输出 [3,5,9,7]</span></span><br></pre></td></tr></table></figure><p>&emsp;&emsp;这六种类型中，<code>list</code>、<code>dict</code>、<code>set</code>都是可变的数据类型，<code>number</code>、<code>string</code>和<code>tuple</code>都是不可变的数据类型（ 可变数据类型更改值后，内存地址不发生改变。不可变数据类型更改值后，内存地址发生改变 ）。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&amp;emsp;&amp;emsp;Python3中有六个标准的数据类型：&lt;code&gt;Number&lt;/code&gt;（数字型）、&lt;code&gt;String&lt;/code&gt;（字符串）、&lt;code&gt;List&lt;/code&gt;（列表）、&lt;code&gt;Tuple&lt;/code&gt;（元组）、&lt;code&gt;Set&lt;/
+      
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="https://huiboxs.cn/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="https://huiboxs.cn/tags/Python/"/>
+    
+      <category term="数据类型" scheme="https://huiboxs.cn/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
+    
+      <category term="Python基础" scheme="https://huiboxs.cn/tags/Python%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>图像常识</title>
+    <link href="https://huiboxs.cn/2020/03/25/imgae-k/"/>
+    <id>https://huiboxs.cn/2020/03/25/imgae-k/</id>
+    <published>2020-03-25T00:26:00.000Z</published>
+    <updated>2020-03-30T12:06:09.725Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="像素与尺寸"><a href="#像素与尺寸" class="headerlink" title="像素与尺寸"></a>像素与尺寸</h2><p>&emsp;&emsp;一个图片的大小通常用以像素为单位。比如：“一张尺寸为1080*1920的图片”，其含义是指一张图片横向（长的那方）有1920像素，纵向有（稍短的那方）1080像素，总共大小就是这么多个像素点。通过PhotoShop将图片一直放大N倍可看到图片是由一个一个的小个子组成的，一个小个子就是一个像素点。</p><h2 id="位图与矢量图"><a href="#位图与矢量图" class="headerlink" title="位图与矢量图"></a>位图与矢量图</h2><p>&emsp;&emsp;前面说到放大图片可以看到像素点，这就是位图的特征。由于横纵方向像素点固定，放大或者缩小越多，图片失真就越严重。矢量图与之相反，无论放大或缩小多少都不会受到影响，因为它不是固定的。颜色、形状、轮廓、大小和屏幕位置都是通过通过公式描述的。SVG做出来的就是矢量图。矢量图虽然不容易失真，但是如果图像细节比较丰富，就需要大量的信息来描述，产生的文件就会非常巨大。所以通常情况下SVG都是些简单的图像。</p><h2 id="通道"><a href="#通道" class="headerlink" title="通道"></a>通道</h2><p>&emsp;&emsp;每张图片都是由一个或者多个数据通道构成。通常说的RGB图像就是由三个（红、绿、蓝）数据通道构成。灰度图像只有一个通道，灰度图像可以看出黑白是根据灰度值0~255（值2越小越接近黑，越大越接近白）。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;像素与尺寸&quot;&gt;&lt;a href=&quot;#像素与尺寸&quot; class=&quot;headerlink&quot; title=&quot;像素与尺寸&quot;&gt;&lt;/a&gt;像素与尺寸&lt;/h2&gt;&lt;p&gt;&amp;emsp;&amp;emsp;一个图片的大小通常用以像素为单位。比如：“一张尺寸为1080*1920的图片”，其含义是指一
+      
+    
+    </summary>
+    
+    
+      <category term="闲谈" scheme="https://huiboxs.cn/categories/%E9%97%B2%E8%B0%88/"/>
+    
+    
+      <category term="尝试" scheme="https://huiboxs.cn/tags/%E5%B0%9D%E8%AF%95/"/>
+    
+  </entry>
   
   <entry>
     <title>JS遍历数组方法</title>
@@ -39,11 +95,11 @@
       <category term="JavaScript" scheme="https://huiboxs.cn/categories/JavaScript/"/>
     
     
-      <category term="JS方法" scheme="https://huiboxs.cn/tags/JS%E6%96%B9%E6%B3%95/"/>
-    
       <category term="前端" scheme="https://huiboxs.cn/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="JavaScript" scheme="https://huiboxs.cn/tags/JavaScript/"/>
+    
+      <category term="JS方法" scheme="https://huiboxs.cn/tags/JS%E6%96%B9%E6%B3%95/"/>
     
   </entry>
   
@@ -71,9 +127,9 @@
     
       <category term="前端" scheme="https://huiboxs.cn/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="JavaScript" scheme="https://huiboxs.cn/tags/JavaScript/"/>
-    
       <category term="框架" scheme="https://huiboxs.cn/tags/%E6%A1%86%E6%9E%B6/"/>
+    
+      <category term="JavaScript" scheme="https://huiboxs.cn/tags/JavaScript/"/>
     
       <category term="jQuery" scheme="https://huiboxs.cn/tags/jQuery/"/>
     
@@ -106,9 +162,9 @@
     
       <category term="前端" scheme="https://huiboxs.cn/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="JavaScript" scheme="https://huiboxs.cn/tags/JavaScript/"/>
-    
       <category term="面向对象" scheme="https://huiboxs.cn/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+    
+      <category term="JavaScript" scheme="https://huiboxs.cn/tags/JavaScript/"/>
     
   </entry>
   
