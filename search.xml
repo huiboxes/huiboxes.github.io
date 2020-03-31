@@ -1,6 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>金融量化分析——股票和量化投资基础</title>
+    <url>/2020/04/01/PY-first-stock-related/</url>
+    <content><![CDATA[<p>&emsp;&emsp;对真正懂金融的人来说运作资本易如反掌，钱生钱生生不息。因为懂金融的不多，也就是经济学中的“稀缺”的概念。信息不对等，那么懂金融的可以比常人更早一步获取信息。了解点金融学（基础是经济学）绝对是不会吃亏的。狭义来说，一般人玩金融就是股票、基金、期货、国债（风险极小）。风险系数是期货 <strong>&gt;</strong> 股票 <strong>&gt;</strong> 基金 <strong>&gt;</strong> 国债，风险越大收益自然也越大。这里简单介绍下作为金融三大支柱之一的<strong>股票</strong>的一些基本概念。</p>
+<h2 id="股票基本概念"><a href="#股票基本概念" class="headerlink" title="股票基本概念"></a>股票基本概念</h2><p>&emsp;&emsp;股票是股份公司发给出资人的一种凭证，股票的持有者就是股份公司的股东。不是所有公司都能发股票，只有股份公司可以发股票。能发股票不代表可以向市场上发放，也就是卖给其他人。只有上市公司才可以通过证券交易所公开向社会增发股票来募集资金。公司要有一定的实力才能允许上市，否则一直赔就是坑股民，所以很多创业企业家的梦想就是独立做大到上市。</p>
+<p>&emsp;&emsp;股票是有面值和市值的，面值表示股票票面上写的金额，市值表示它实际的市场价值。通常说股价就是说的市值。面值是决定每股在公司股份的比例的 ，市值是决定投资人的收益的。一般而言，股票在第一次发行时，其发行价是不会低于其面值的，而随着市场的波动，其有时会高于面值，有时也会低于面值。 </p>
+<p>&emsp;&emsp;股票可以作为出资证明，说明你是这个公司的股东，理论上可以参加股东大会对公司经营发表意见（前提是要买非常多的股份）。通过股票的获利主要是两种方式：一种是公司分红，比如说你持有这个公司的股票，那么这个公司会定期或者不定期的分红。比如你每持有10股就给三毛钱，或者每十股增三股。靠分红赚钱的话收益非常小，更多人是靠交易获利。通过股票价格的波动，低价买高价卖，中间的差价就是盈利。</p>
+<h2 id="股票分类"><a href="#股票分类" class="headerlink" title="股票分类"></a>股票分类</h2><h3 id="股票有按业绩分类："><a href="#股票有按业绩分类：" class="headerlink" title="股票有按业绩分类："></a>股票有按业绩分类：</h3><ul>
+<li>蓝筹股：资本雄厚、信誉优良的公司的股票（中石化、中石油、中铁等）</li>
+<li>绩优股：业绩优良的公司的股票（贵州茅台、中国联通、中航高科等）</li>
+<li>ST股：特别处理股票，连续两年亏损或每股净资产低于股票面值</li>
+</ul>
+<h3 id="按上市地区分类："><a href="#按上市地区分类：" class="headerlink" title="按上市地区分类："></a>按上市地区分类：</h3><ul>
+<li>A股：中国大陆上市，人名币认购买卖( <code>T + 1</code>,涨跌幅10%,国人通常讨论A股)</li>
+<li>B股：中国大陆上市，外币认购买卖( <code>T + 1</code>, <code>T + 3</code> )</li>
+<li>H股：中国香港上市（ <code>T + 0</code>，涨跌幅不设限制）</li>
+<li>N股：美国纽约上市</li>
+<li>S股：新加坡上市</li>
+</ul>
+<p>&emsp;&emsp;不同地区上市的股票交易规则也不一样，就好比A股实行<code>T + 1</code>的制度和涨跌幅10%的限制。<code>T+1</code>的比方：今天我买了200股中国人寿的股票，那至少要第二天我才能把这200股卖出去，手头除了这200股其它的中国人寿的股票不受影响。常听到的跌停涨停就是股票价格相比昨天收盘时的价格涨或者跌了10%。B股的<code>T＋１</code>指的是交易按照这个制度，股票套现的制度按照<code>T+3</code>也就是3天后才能套现。</p>
+<h2 id="股票市场的构成"><a href="#股票市场的构成" class="headerlink" title="股票市场的构成"></a>股票市场的构成</h2><ul>
+<li>上市公司（发股票的）</li>
+<li>投资者（买股票的，包括机构投资者）</li>
+<li>证监会（监察股市的组织，避免影响市场的行为，例如暗中操作股价）、证券业协会（发行业资格证的）、交易所（交易场所，不允许在其它地方交易）</li>
+<li>证券中介机构（个人无法找交易所买，只有通过中介机构）</li>
+</ul>
+<h3 id="交易所"><a href="#交易所" class="headerlink" title="交易所"></a>交易所</h3><ul>
+<li>上海证券交易所（上交）：只有一个主板（沪指或者上证指数）</li>
+<li>深圳证券交易所（深交）：<ul>
+<li>主板：大型成熟企业（深成指）</li>
+<li>中小板：经营规模较小（中小板指）</li>
+<li>创业板：尚处于成长期的创业企业（创业板指）</li>
+</ul>
+</li>
+</ul>
+<p>&emsp;&emsp;交易所是分板块的，板块上会有很多股票的表现综合在一起形成的指数 ，也就是大盘。大盘看起来和股价很相似的曲线，但它不是某一支股票。大盘可以反映当前市场总体的态势，牛市就是总体都在涨，熊市就是整体都在跌。深交所有三个板块。</p>
+<h2 id="影响股价的因素"><a href="#影响股价的因素" class="headerlink" title="影响股价的因素"></a>影响股价的因素</h2><ul>
+<li>市场内部因素</li>
+<li>基本面因素</li>
+<li>政策因素</li>
+</ul>
+<p>&emsp;&emsp;市场内部因素主要指买和卖的的关系，买的人多卖的人少就会涨，卖的人少买的人多就会跌。价格根据供求关系波动。基本面因素指公司营收状况，懂金融的人都会分析公司的财务报表、营收额、市盈率、市净率等来预测股票是否适合买入。政策因素就非常宽泛而且很难预测，打个比方，如果国家提高存款利率，相当于国家鼓励人们把钱存进银行而不是留在市场。   对于股价通常都有影响，到了股票上涨跌的体现就很难说。</p>
+<h2 id="股票买卖（A股）"><a href="#股票买卖（A股）" class="headerlink" title="股票买卖（A股）"></a>股票买卖（A股）</h2><ul>
+<li><p>委托买卖股票</p>
+<ul>
+<li>个人不能直接买卖，需要在券商开户，进行委托购买</li>
+</ul>
+</li>
+<li><p>股票交易日：法定节假日和交易所修市日以外的周一到周五</p>
+</li>
+<li><p>股票交易时间：</p>
+<ul>
+<li><code>9：15 - 9：25</code>         开盘集合竞价时间（为了定出今天的开盘价）</li>
+<li><code>9：30 - 11：30</code>       前市，连续竞价时间</li>
+<li><code>13：00 - 15：00</code>     后市，连续竞价时间</li>
+<li><code>14：57 - 15：00</code>     深交所收盘集合竞价时间（决定今天的收盘价，上交所没有）</li>
+</ul>
+<p>注意：还有<code>T+1</code>制度和涨跌停10%的限制。</p>
+</li>
+</ul>
+<h2 id="K线图"><a href="#K线图" class="headerlink" title="K线图"></a>K线图</h2><p><img src="k.png" alt="k线图"></p>
+<p>​        K线图：    每天的股价表现综合为一个K线图。类似‘中’的符号，红色是张，绿色是跌；上边界代表当天的收盘价，下边界表示当天的开盘价；线的顶端表示当天的最高价，最低端表示当天的最低价。绿色的上下边界代表的与红色相反，最高价和最低价和红色的看法一样。可以通过K线看出某个时段股价的走势。蓝、黄、粉和绿这些线条表示的是均线（多少日内平均的走势），越接近k线走势就是越短期的均线。越短期的均线波动越明显，显得波动比价频繁、波动大。通常来说，短期均线如果下穿长期均线，就是要跌的预兆，上穿均线就是要涨。上穿的交叉线也叫金叉，下穿的交叉线叫做死叉。双均线是有滞后性，它不是实时显示的。所以根本不可能存在绝对盈利的策略，买股票就是博一个概率。</p>
+<h2 id="金融分析"><a href="#金融分析" class="headerlink" title="金融分析"></a>金融分析</h2><ul>
+<li>基本面分析<ul>
+<li>宏观经济面分析：国家的财政政策、货币政策等</li>
+<li>行业分析（）</li>
+<li>公司分析：财务数据、业绩报告等</li>
+</ul>
+</li>
+<li>技术面分析：各项技术指标<ul>
+<li>K线</li>
+<li>平均线</li>
+<li>KDJ</li>
+<li>MACD</li>
+<li>……</li>
+</ul>
+</li>
+</ul>
+<h2 id="金融量化投资"><a href="#金融量化投资" class="headerlink" title="金融量化投资"></a>金融量化投资</h2><ul>
+<li>量化投资：利用计算机技术并且采用一定的数学模型去实践投资理念，实现投资策略的过程。</li>
+<li>量化投资的优势：<ul>
+<li>避免主观情绪、人性弱点和认知偏差，选择更加客观（社会经济学）</li>
+<li>能同时包括多角度的观察和多层次的模型（大数据+数据可视化）</li>
+<li>及时跟踪市场变化，不断发现新的统计模型，寻找交易机会（自动化）</li>
+<li>在决定投资策略后，能通过回测验证其效果（机器学习）</li>
+</ul>
+</li>
+</ul>
+<h2 id="量化策略"><a href="#量化策略" class="headerlink" title="量化策略"></a>量化策略</h2><ul>
+<li>量化策略：通过一套固定的逻辑来分析、判断和决策，自动化地进行股票交易</li>
+<li>核心内容<ul>
+<li>选股</li>
+<li>择时</li>
+<li>仓位管理</li>
+<li>止盈止损</li>
+</ul>
+</li>
+<li>策略的周期<ul>
+<li>产生想法/学习知识</li>
+<li>实现策略：Python</li>
+<li>校验策略：回测/模拟交易</li>
+<li>实盘交易</li>
+<li>优化策略/放弃策略</li>
+</ul>
+</li>
+</ul>
+<h2 id="Python实现量化投资"><a href="#Python实现量化投资" class="headerlink" title="Python实现量化投资"></a>Python实现量化投资</h2><ul>
+<li>Numpy：数值计算</li>
+<li>pandas：数据分析</li>
+<li>Matplotlib：图标绘制</li>
+</ul>
+]]></content>
+      <categories>
+        <category>数据分析</category>
+      </categories>
+      <tags>
+        <tag>数据分析</tag>
+        <tag>金融常识</tag>
+        <tag>金融量化基础</tag>
+        <tag>Python进阶</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ES6中Proxy</title>
     <url>/2020/03/31/JS-Proxy/</url>
     <content><![CDATA[<p>&emsp;&emsp;Proxy翻译成中文是代理的意思，可以拦截对对象的操作然后进行你给定的操作。先上例子：</p>
@@ -13,9 +135,9 @@
         <category>JavaScript</category>
       </categories>
       <tags>
+        <tag>JavaScript</tag>
         <tag>Proxy</tag>
         <tag>ES6</tag>
-        <tag>JavaScript</tag>
         <tag>数据绑定</tag>
         <tag>语法</tag>
       </tags>
@@ -103,8 +225,8 @@
         <category>JavaScript</category>
       </categories>
       <tags>
-        <tag>JavaScript</tag>
         <tag>前端</tag>
+        <tag>JavaScript</tag>
         <tag>JS方法</tag>
       </tags>
   </entry>
@@ -125,8 +247,8 @@
         <category>前端框架</category>
       </categories>
       <tags>
-        <tag>JavaScript</tag>
         <tag>前端</tag>
+        <tag>JavaScript</tag>
         <tag>框架</tag>
         <tag>jQuery</tag>
         <tag>快速入门</tag>
@@ -160,8 +282,8 @@
         <category>JavaScript</category>
       </categories>
       <tags>
-        <tag>JavaScript</tag>
         <tag>前端</tag>
+        <tag>JavaScript</tag>
         <tag>面向对象</tag>
       </tags>
   </entry>
@@ -188,8 +310,8 @@
         <category>JavaScript</category>
       </categories>
       <tags>
-        <tag>JavaScript</tag>
         <tag>前端</tag>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -215,8 +337,8 @@
         <category>JavaScript</category>
       </categories>
       <tags>
-        <tag>JavaScript</tag>
         <tag>前端</tag>
+        <tag>JavaScript</tag>
         <tag>ES 5</tag>
       </tags>
   </entry>
@@ -413,8 +535,8 @@
         <category>CSS</category>
       </categories>
       <tags>
-        <tag>CSS基础</tag>
         <tag>前端</tag>
+        <tag>CSS基础</tag>
       </tags>
   </entry>
   <entry>
@@ -434,8 +556,8 @@
         <category>CSS</category>
       </categories>
       <tags>
-        <tag>CSS基础</tag>
         <tag>前端</tag>
+        <tag>CSS基础</tag>
         <tag>盒子模型</tag>
       </tags>
   </entry>
@@ -491,8 +613,8 @@
         <category>CSS</category>
       </categories>
       <tags>
-        <tag>CSS基础</tag>
         <tag>前端</tag>
+        <tag>CSS基础</tag>
       </tags>
   </entry>
   <entry>

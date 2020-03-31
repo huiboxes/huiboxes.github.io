@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/tuzi32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/tuzi16.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="数据分析,金融常识,金融量化基础,Python进阶," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ShaohuiのBlog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="&amp;emsp;&amp;emsp;对真正懂金融的人来说运作资本易如反掌，钱生钱生生不息。因为懂金融的不多，也就是经济学中的“稀缺”的概念。信息不对等，那么懂金融的可以比常人更早一步获取信息。了解点金融学（基础是经济学）绝对是不会吃亏的。狭义来说，一般人玩金融就是股票、基金、期货、国债（风险极小）。风险系数是期货 &amp;gt; 股票 &amp;gt; 基金 &amp;gt; 国债，风险越大收益自然也越大。这里简单介绍下作为金融三">
+<meta name="keywords" content="数据分析,金融常识,金融量化基础,Python进阶">
+<meta property="og:type" content="article">
+<meta property="og:title" content="金融量化分析——股票和量化投资基础">
+<meta property="og:url" content="https:&#x2F;&#x2F;huiboxs.cn&#x2F;2020&#x2F;04&#x2F;01&#x2F;PY-first-stock-related&#x2F;index.html">
+<meta property="og:site_name" content="ShaohuiのBlog">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;对真正懂金融的人来说运作资本易如反掌，钱生钱生生不息。因为懂金融的不多，也就是经济学中的“稀缺”的概念。信息不对等，那么懂金融的可以比常人更早一步获取信息。了解点金融学（基础是经济学）绝对是不会吃亏的。狭义来说，一般人玩金融就是股票、基金、期货、国债（风险极小）。风险系数是期货 &amp;gt; 股票 &amp;gt; 基金 &amp;gt; 国债，风险越大收益自然也越大。这里简单介绍下作为金融三">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https:&#x2F;&#x2F;huiboxs.cn&#x2F;2020&#x2F;04&#x2F;01&#x2F;PY-first-stock-related&#x2F;k.png">
+<meta property="og:updated_time" content="2020-03-31T17:02:01.107Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;huiboxs.cn&#x2F;2020&#x2F;04&#x2F;01&#x2F;PY-first-stock-related&#x2F;k.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://huiboxs.cn/2020/04/01/PY-first-stock-related/"/>
+
+
+
+
+
+  <title>金融量化分析——股票和量化投资基础 | ShaohuiのBlog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ShaohuiのBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">编程初学者</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" target="_blank" rel="noopener" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://huiboxs.cn/2020/04/01/PY-first-stock-related/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shaohui">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/tx.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShaohuiのBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">金融量化分析——股票和量化投资基础</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-01T01:00:00+08:00">
+                2020-04-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" itemprop="url" rel="index">
+                    <span itemprop="name">数据分析</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/04/01/PY-first-stock-related/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/01/PY-first-stock-related/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&emsp;&emsp;对真正懂金融的人来说运作资本易如反掌，钱生钱生生不息。因为懂金融的不多，也就是经济学中的“稀缺”的概念。信息不对等，那么懂金融的可以比常人更早一步获取信息。了解点金融学（基础是经济学）绝对是不会吃亏的。狭义来说，一般人玩金融就是股票、基金、期货、国债（风险极小）。风险系数是期货 <strong>&gt;</strong> 股票 <strong>&gt;</strong> 基金 <strong>&gt;</strong> 国债，风险越大收益自然也越大。这里简单介绍下作为金融三大支柱之一的<strong>股票</strong>的一些基本概念。</p>
+<h2 id="股票基本概念"><a href="#股票基本概念" class="headerlink" title="股票基本概念"></a>股票基本概念</h2><p>&emsp;&emsp;股票是股份公司发给出资人的一种凭证，股票的持有者就是股份公司的股东。不是所有公司都能发股票，只有股份公司可以发股票。能发股票不代表可以向市场上发放，也就是卖给其他人。只有上市公司才可以通过证券交易所公开向社会增发股票来募集资金。公司要有一定的实力才能允许上市，否则一直赔就是坑股民，所以很多创业企业家的梦想就是独立做大到上市。</p>
+<p>&emsp;&emsp;股票是有面值和市值的，面值表示股票票面上写的金额，市值表示它实际的市场价值。通常说股价就是说的市值。面值是决定每股在公司股份的比例的 ，市值是决定投资人的收益的。一般而言，股票在第一次发行时，其发行价是不会低于其面值的，而随着市场的波动，其有时会高于面值，有时也会低于面值。 </p>
+<p>&emsp;&emsp;股票可以作为出资证明，说明你是这个公司的股东，理论上可以参加股东大会对公司经营发表意见（前提是要买非常多的股份）。通过股票的获利主要是两种方式：一种是公司分红，比如说你持有这个公司的股票，那么这个公司会定期或者不定期的分红。比如你每持有10股就给三毛钱，或者每十股增三股。靠分红赚钱的话收益非常小，更多人是靠交易获利。通过股票价格的波动，低价买高价卖，中间的差价就是盈利。</p>
+<h2 id="股票分类"><a href="#股票分类" class="headerlink" title="股票分类"></a>股票分类</h2><h3 id="股票有按业绩分类："><a href="#股票有按业绩分类：" class="headerlink" title="股票有按业绩分类："></a>股票有按业绩分类：</h3><ul>
+<li>蓝筹股：资本雄厚、信誉优良的公司的股票（中石化、中石油、中铁等）</li>
+<li>绩优股：业绩优良的公司的股票（贵州茅台、中国联通、中航高科等）</li>
+<li>ST股：特别处理股票，连续两年亏损或每股净资产低于股票面值</li>
+</ul>
+<h3 id="按上市地区分类："><a href="#按上市地区分类：" class="headerlink" title="按上市地区分类："></a>按上市地区分类：</h3><ul>
+<li>A股：中国大陆上市，人名币认购买卖( <code>T + 1</code>,涨跌幅10%,国人通常讨论A股)</li>
+<li>B股：中国大陆上市，外币认购买卖( <code>T + 1</code>, <code>T + 3</code> )</li>
+<li>H股：中国香港上市（ <code>T + 0</code>，涨跌幅不设限制）</li>
+<li>N股：美国纽约上市</li>
+<li>S股：新加坡上市</li>
+</ul>
+<p>&emsp;&emsp;不同地区上市的股票交易规则也不一样，就好比A股实行<code>T + 1</code>的制度和涨跌幅10%的限制。<code>T+1</code>的比方：今天我买了200股中国人寿的股票，那至少要第二天我才能把这200股卖出去，手头除了这200股其它的中国人寿的股票不受影响。常听到的跌停涨停就是股票价格相比昨天收盘时的价格涨或者跌了10%。B股的<code>T＋１</code>指的是交易按照这个制度，股票套现的制度按照<code>T+3</code>也就是3天后才能套现。</p>
+<h2 id="股票市场的构成"><a href="#股票市场的构成" class="headerlink" title="股票市场的构成"></a>股票市场的构成</h2><ul>
+<li>上市公司（发股票的）</li>
+<li>投资者（买股票的，包括机构投资者）</li>
+<li>证监会（监察股市的组织，避免影响市场的行为，例如暗中操作股价）、证券业协会（发行业资格证的）、交易所（交易场所，不允许在其它地方交易）</li>
+<li>证券中介机构（个人无法找交易所买，只有通过中介机构）</li>
+</ul>
+<h3 id="交易所"><a href="#交易所" class="headerlink" title="交易所"></a>交易所</h3><ul>
+<li>上海证券交易所（上交）：只有一个主板（沪指或者上证指数）</li>
+<li>深圳证券交易所（深交）：<ul>
+<li>主板：大型成熟企业（深成指）</li>
+<li>中小板：经营规模较小（中小板指）</li>
+<li>创业板：尚处于成长期的创业企业（创业板指）</li>
+</ul>
+</li>
+</ul>
+<p>&emsp;&emsp;交易所是分板块的，板块上会有很多股票的表现综合在一起形成的指数 ，也就是大盘。大盘看起来和股价很相似的曲线，但它不是某一支股票。大盘可以反映当前市场总体的态势，牛市就是总体都在涨，熊市就是整体都在跌。深交所有三个板块。</p>
+<h2 id="影响股价的因素"><a href="#影响股价的因素" class="headerlink" title="影响股价的因素"></a>影响股价的因素</h2><ul>
+<li>市场内部因素</li>
+<li>基本面因素</li>
+<li>政策因素</li>
+</ul>
+<p>&emsp;&emsp;市场内部因素主要指买和卖的的关系，买的人多卖的人少就会涨，卖的人少买的人多就会跌。价格根据供求关系波动。基本面因素指公司营收状况，懂金融的人都会分析公司的财务报表、营收额、市盈率、市净率等来预测股票是否适合买入。政策因素就非常宽泛而且很难预测，打个比方，如果国家提高存款利率，相当于国家鼓励人们把钱存进银行而不是留在市场。   对于股价通常都有影响，到了股票上涨跌的体现就很难说。</p>
+<h2 id="股票买卖（A股）"><a href="#股票买卖（A股）" class="headerlink" title="股票买卖（A股）"></a>股票买卖（A股）</h2><ul>
+<li><p>委托买卖股票</p>
+<ul>
+<li>个人不能直接买卖，需要在券商开户，进行委托购买</li>
+</ul>
+</li>
+<li><p>股票交易日：法定节假日和交易所修市日以外的周一到周五</p>
+</li>
+<li><p>股票交易时间：</p>
+<ul>
+<li><code>9：15 - 9：25</code>         开盘集合竞价时间（为了定出今天的开盘价）</li>
+<li><code>9：30 - 11：30</code>       前市，连续竞价时间</li>
+<li><code>13：00 - 15：00</code>     后市，连续竞价时间</li>
+<li><code>14：57 - 15：00</code>     深交所收盘集合竞价时间（决定今天的收盘价，上交所没有）</li>
+</ul>
+<p>注意：还有<code>T+1</code>制度和涨跌停10%的限制。</p>
+</li>
+</ul>
+<h2 id="K线图"><a href="#K线图" class="headerlink" title="K线图"></a>K线图</h2><p><img src="k.png" alt="k线图"></p>
+<p>​        K线图：    每天的股价表现综合为一个K线图。类似‘中’的符号，红色是张，绿色是跌；上边界代表当天的收盘价，下边界表示当天的开盘价；线的顶端表示当天的最高价，最低端表示当天的最低价。绿色的上下边界代表的与红色相反，最高价和最低价和红色的看法一样。可以通过K线看出某个时段股价的走势。蓝、黄、粉和绿这些线条表示的是均线（多少日内平均的走势），越接近k线走势就是越短期的均线。越短期的均线波动越明显，显得波动比价频繁、波动大。通常来说，短期均线如果下穿长期均线，就是要跌的预兆，上穿均线就是要涨。上穿的交叉线也叫金叉，下穿的交叉线叫做死叉。双均线是有滞后性，它不是实时显示的。所以根本不可能存在绝对盈利的策略，买股票就是博一个概率。</p>
+<h2 id="金融分析"><a href="#金融分析" class="headerlink" title="金融分析"></a>金融分析</h2><ul>
+<li>基本面分析<ul>
+<li>宏观经济面分析：国家的财政政策、货币政策等</li>
+<li>行业分析（）</li>
+<li>公司分析：财务数据、业绩报告等</li>
+</ul>
+</li>
+<li>技术面分析：各项技术指标<ul>
+<li>K线</li>
+<li>平均线</li>
+<li>KDJ</li>
+<li>MACD</li>
+<li>……</li>
+</ul>
+</li>
+</ul>
+<h2 id="金融量化投资"><a href="#金融量化投资" class="headerlink" title="金融量化投资"></a>金融量化投资</h2><ul>
+<li>量化投资：利用计算机技术并且采用一定的数学模型去实践投资理念，实现投资策略的过程。</li>
+<li>量化投资的优势：<ul>
+<li>避免主观情绪、人性弱点和认知偏差，选择更加客观（社会经济学）</li>
+<li>能同时包括多角度的观察和多层次的模型（大数据+数据可视化）</li>
+<li>及时跟踪市场变化，不断发现新的统计模型，寻找交易机会（自动化）</li>
+<li>在决定投资策略后，能通过回测验证其效果（机器学习）</li>
+</ul>
+</li>
+</ul>
+<h2 id="量化策略"><a href="#量化策略" class="headerlink" title="量化策略"></a>量化策略</h2><ul>
+<li>量化策略：通过一套固定的逻辑来分析、判断和决策，自动化地进行股票交易</li>
+<li>核心内容<ul>
+<li>选股</li>
+<li>择时</li>
+<li>仓位管理</li>
+<li>止盈止损</li>
+</ul>
+</li>
+<li>策略的周期<ul>
+<li>产生想法/学习知识</li>
+<li>实现策略：Python</li>
+<li>校验策略：回测/模拟交易</li>
+<li>实盘交易</li>
+<li>优化策略/放弃策略</li>
+</ul>
+</li>
+</ul>
+<h2 id="Python实现量化投资"><a href="#Python实现量化投资" class="headerlink" title="Python实现量化投资"></a>Python实现量化投资</h2><ul>
+<li>Numpy：数值计算</li>
+<li>pandas：数据分析</li>
+<li>Matplotlib：图标绘制</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" rel="tag"># 数据分析</a>
+          
+            <a href="/tags/%E9%87%91%E8%9E%8D%E5%B8%B8%E8%AF%86/" rel="tag"># 金融常识</a>
+          
+            <a href="/tags/%E9%87%91%E8%9E%8D%E9%87%8F%E5%8C%96%E5%9F%BA%E7%A1%80/" rel="tag"># 金融量化基础</a>
+          
+            <a href="/tags/Python%E8%BF%9B%E9%98%B6/" rel="tag"># Python进阶</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/03/31/JS-Proxy/" rel="next" title="ES6中Proxy">
+                <i class="fa fa-chevron-left"></i> ES6中Proxy
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/tx.png"
+                alt="Shaohui" />
+            
+              <p class="site-author-name" itemprop="name">Shaohui</p>
+              <p class="site-description motion-element" itemprop="description">记录学习生活</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#股票基本概念"><span class="nav-number">1.</span> <span class="nav-text">股票基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#股票分类"><span class="nav-number">2.</span> <span class="nav-text">股票分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#股票有按业绩分类："><span class="nav-number">2.1.</span> <span class="nav-text">股票有按业绩分类：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#按上市地区分类："><span class="nav-number">2.2.</span> <span class="nav-text">按上市地区分类：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#股票市场的构成"><span class="nav-number">3.</span> <span class="nav-text">股票市场的构成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#交易所"><span class="nav-number">3.1.</span> <span class="nav-text">交易所</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#影响股价的因素"><span class="nav-number">4.</span> <span class="nav-text">影响股价的因素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#股票买卖（A股）"><span class="nav-number">5.</span> <span class="nav-text">股票买卖（A股）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#K线图"><span class="nav-number">6.</span> <span class="nav-text">K线图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#金融分析"><span class="nav-number">7.</span> <span class="nav-text">金融分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#金融量化投资"><span class="nav-number">8.</span> <span class="nav-text">金融量化投资</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#量化策略"><span class="nav-number">9.</span> <span class="nav-text">量化策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python实现量化投资"><span class="nav-number">10.</span> <span class="nav-text">Python实现量化投资</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Shaohui</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '3Q9JSwomPnFzEL7XsxUM57gR-gzGzoHsz',
+        appKey: 'TTCatE57NFJMvykyoop9lY5i',
+        placeholder: '留下宝贵意见',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
