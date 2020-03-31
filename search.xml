@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>ES6中Proxy</title>
+    <url>/2020/03/31/JS-Proxy/</url>
+    <content><![CDATA[<p>&emsp;&emsp;Proxy翻译成中文是代理的意思，可以拦截对对象的操作然后进行你给定的操作。先上例子：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> _data = &#123;</span><br><span class="line">            name: <span class="string">'hui'</span>,</span><br><span class="line">            age: <span class="number">18</span></span><br><span class="line">        &#125;</span><br><span class="line"><span class="keyword">let</span> data = <span class="keyword">new</span> <span class="built_in">Proxy</span>(_data,&#123;	</span><br><span class="line">            <span class="keyword">set</span>(obj,name,value)&#123;	</span><br><span class="line">            	<span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;name&#125;</span>被修改成了<span class="subst">$&#123;value&#125;</span>`</span>)</span><br><span class="line">        &#125;</span><br><span class="line">	&#125;)</span><br><span class="line">data.name = <span class="string">'box'</span>  <span class="comment">// set被触发，控制台输出 'ame被修改成了box'</span></span><br><span class="line"><span class="built_in">console</span>.log(data.name) <span class="comment">// 'hui'  因为被set拦截所以值没被修改</span></span><br></pre></td></tr></table></figure>
+
+<p>&emsp;&emsp;上面的代码<code>data</code>就是一个<code>Proxy</code>实例，在生成实例时传入了两个对象。第二个对象中的<code>set</code>方法是是自带的，当传入的第一个对象的值要被修改时就拦截这个操作并且执行这个<code>set</code>方法。第二个参数代表被修改的那个值，第三个代表被修改成的那个值。</p>
+<p>&emsp;&emsp;除了<code>set</code>方法外，还有：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">get</span>()   // 方法用于拦截对象的读取属性操作。</span><br><span class="line">has() // 方法是针对in操作符的代理方法。</span><br><span class="line">apply() // 方法用于拦截函数的调用</span><br><span class="line">construct() //  方法用于拦截 new 操作符，为可使new操作符在生成的Proxy对象上生效，用于初始化代理的目标对象自身必须具有【Construct】内部方法（即 new target 必须是有效的）。</span><br><span class="line">defineProperty() // 用于拦截对对象的object.defineProperty()操作;</span><br><span class="line">deleteProperty() // 方法用于拦截对对象属性的delete操作。</span><br><span class="line">handler.getOwnPropertyDrscriptor() // 方法是Object.getOwnPropertyDescriptor()的钩子。</span><br><span class="line">handler.getPrototypeOf() // 是一个代理方法，当读取代理对象的原型时，该方法就会被调用。</span><br><span class="line">handler.isExtensible() // 用于拦截对对象的Object.isExtensible()。</span><br><span class="line">...</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>Proxy</tag>
+        <tag>ES6</tag>
+        <tag>JavaScript</tag>
+        <tag>数据绑定</tag>
+        <tag>语法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python数据类型</title>
     <url>/2020/03/29/PY-DateType/</url>
     <content><![CDATA[<p>&emsp;&emsp;Python3中有六个标准的数据类型：<code>Number</code>（数字型）、<code>String</code>（字符串）、<code>List</code>（列表）、<code>Tuple</code>（元组）、<code>Set</code>（集合）、<code>Dictionary</code>（字典）。 </p>
@@ -83,8 +103,8 @@
         <category>JavaScript</category>
       </categories>
       <tags>
-        <tag>前端</tag>
         <tag>JavaScript</tag>
+        <tag>前端</tag>
         <tag>JS方法</tag>
       </tags>
   </entry>
@@ -105,9 +125,9 @@
         <category>前端框架</category>
       </categories>
       <tags>
+        <tag>JavaScript</tag>
         <tag>前端</tag>
         <tag>框架</tag>
-        <tag>JavaScript</tag>
         <tag>jQuery</tag>
         <tag>快速入门</tag>
       </tags>
@@ -140,9 +160,9 @@
         <category>JavaScript</category>
       </categories>
       <tags>
+        <tag>JavaScript</tag>
         <tag>前端</tag>
         <tag>面向对象</tag>
-        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -168,8 +188,8 @@
         <category>JavaScript</category>
       </categories>
       <tags>
-        <tag>前端</tag>
         <tag>JavaScript</tag>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -195,8 +215,8 @@
         <category>JavaScript</category>
       </categories>
       <tags>
-        <tag>前端</tag>
         <tag>JavaScript</tag>
+        <tag>前端</tag>
         <tag>ES 5</tag>
       </tags>
   </entry>
@@ -393,8 +413,8 @@
         <category>CSS</category>
       </categories>
       <tags>
-        <tag>前端</tag>
         <tag>CSS基础</tag>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -414,8 +434,8 @@
         <category>CSS</category>
       </categories>
       <tags>
-        <tag>前端</tag>
         <tag>CSS基础</tag>
+        <tag>前端</tag>
         <tag>盒子模型</tag>
       </tags>
   </entry>
@@ -471,8 +491,8 @@
         <category>CSS</category>
       </categories>
       <tags>
-        <tag>前端</tag>
         <tag>CSS基础</tag>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>

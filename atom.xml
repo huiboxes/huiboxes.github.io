@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://huiboxs.cn/"/>
-  <updated>2020-03-30T13:27:12.843Z</updated>
+  <updated>2020-03-31T07:28:13.825Z</updated>
   <id>https://huiboxs.cn/</id>
   
   <author>
@@ -15,6 +15,41 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ES6中Proxy</title>
+    <link href="https://huiboxs.cn/2020/03/31/JS-Proxy/"/>
+    <id>https://huiboxs.cn/2020/03/31/JS-Proxy/</id>
+    <published>2020-03-31T07:05:00.000Z</published>
+    <updated>2020-03-31T07:28:13.825Z</updated>
+    
+    <content type="html"><![CDATA[<p>&emsp;&emsp;Proxy翻译成中文是代理的意思，可以拦截对对象的操作然后进行你给定的操作。先上例子：</p><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> _data = &#123;</span><br><span class="line">            name: <span class="string">'hui'</span>,</span><br><span class="line">            age: <span class="number">18</span></span><br><span class="line">        &#125;</span><br><span class="line"><span class="keyword">let</span> data = <span class="keyword">new</span> <span class="built_in">Proxy</span>(_data,&#123;</span><br><span class="line">            <span class="keyword">set</span>(obj,name,value)&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;name&#125;</span>被修改成了<span class="subst">$&#123;value&#125;</span>`</span>)</span><br><span class="line">        &#125;</span><br><span class="line">&#125;)</span><br><span class="line">data.name = <span class="string">'box'</span>  <span class="comment">// set被触发，控制台输出 'ame被修改成了box'</span></span><br><span class="line"><span class="built_in">console</span>.log(data.name) <span class="comment">// 'hui'  因为被set拦截所以值没被修改</span></span><br></pre></td></tr></table></figure><p>&emsp;&emsp;上面的代码<code>data</code>就是一个<code>Proxy</code>实例，在生成实例时传入了两个对象。第二个对象中的<code>set</code>方法是是自带的，当传入的第一个对象的值要被修改时就拦截这个操作并且执行这个<code>set</code>方法。第二个参数代表被修改的那个值，第三个代表被修改成的那个值。</p><p>&emsp;&emsp;除了<code>set</code>方法外，还有：</p><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">get</span>()   // 方法用于拦截对象的读取属性操作。</span><br><span class="line">has() // 方法是针对in操作符的代理方法。</span><br><span class="line">apply() // 方法用于拦截函数的调用</span><br><span class="line">construct() //  方法用于拦截 new 操作符，为可使new操作符在生成的Proxy对象上生效，用于初始化代理的目标对象自身必须具有【Construct】内部方法（即 new target 必须是有效的）。</span><br><span class="line">defineProperty() // 用于拦截对对象的object.defineProperty()操作;</span><br><span class="line">deleteProperty() // 方法用于拦截对对象属性的delete操作。</span><br><span class="line">handler.getOwnPropertyDrscriptor() // 方法是Object.getOwnPropertyDescriptor()的钩子。</span><br><span class="line">handler.getPrototypeOf() // 是一个代理方法，当读取代理对象的原型时，该方法就会被调用。</span><br><span class="line">handler.isExtensible() // 用于拦截对对象的Object.isExtensible()。</span><br><span class="line">...</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&amp;emsp;&amp;emsp;Proxy翻译成中文是代理的意思，可以拦截对对象的操作然后进行你给定的操作。先上例子：&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span c
+      
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://huiboxs.cn/categories/JavaScript/"/>
+    
+    
+      <category term="Proxy" scheme="https://huiboxs.cn/tags/Proxy/"/>
+    
+      <category term="ES6" scheme="https://huiboxs.cn/tags/ES6/"/>
+    
+      <category term="JavaScript" scheme="https://huiboxs.cn/tags/JavaScript/"/>
+    
+      <category term="数据绑定" scheme="https://huiboxs.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/"/>
+    
+      <category term="语法" scheme="https://huiboxs.cn/tags/%E8%AF%AD%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>Python数据类型</title>
@@ -95,9 +130,9 @@
       <category term="JavaScript" scheme="https://huiboxs.cn/categories/JavaScript/"/>
     
     
-      <category term="前端" scheme="https://huiboxs.cn/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="JavaScript" scheme="https://huiboxs.cn/tags/JavaScript/"/>
+    
+      <category term="前端" scheme="https://huiboxs.cn/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="JS方法" scheme="https://huiboxs.cn/tags/JS%E6%96%B9%E6%B3%95/"/>
     
@@ -125,11 +160,11 @@
       <category term="前端框架" scheme="https://huiboxs.cn/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
     
     
+      <category term="JavaScript" scheme="https://huiboxs.cn/tags/JavaScript/"/>
+    
       <category term="前端" scheme="https://huiboxs.cn/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="框架" scheme="https://huiboxs.cn/tags/%E6%A1%86%E6%9E%B6/"/>
-    
-      <category term="JavaScript" scheme="https://huiboxs.cn/tags/JavaScript/"/>
     
       <category term="jQuery" scheme="https://huiboxs.cn/tags/jQuery/"/>
     
@@ -160,11 +195,11 @@
       <category term="JavaScript" scheme="https://huiboxs.cn/categories/JavaScript/"/>
     
     
+      <category term="JavaScript" scheme="https://huiboxs.cn/tags/JavaScript/"/>
+    
       <category term="前端" scheme="https://huiboxs.cn/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="面向对象" scheme="https://huiboxs.cn/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
-    
-      <category term="JavaScript" scheme="https://huiboxs.cn/tags/JavaScript/"/>
     
   </entry>
   
@@ -190,9 +225,9 @@
       <category term="JavaScript" scheme="https://huiboxs.cn/categories/JavaScript/"/>
     
     
-      <category term="前端" scheme="https://huiboxs.cn/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="JavaScript" scheme="https://huiboxs.cn/tags/JavaScript/"/>
+    
+      <category term="前端" scheme="https://huiboxs.cn/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
@@ -218,9 +253,9 @@
       <category term="JavaScript" scheme="https://huiboxs.cn/categories/JavaScript/"/>
     
     
-      <category term="前端" scheme="https://huiboxs.cn/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="JavaScript" scheme="https://huiboxs.cn/tags/JavaScript/"/>
+    
+      <category term="前端" scheme="https://huiboxs.cn/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="ES 5" scheme="https://huiboxs.cn/tags/ES-5/"/>
     
@@ -338,9 +373,9 @@
       <category term="CSS" scheme="https://huiboxs.cn/categories/CSS/"/>
     
     
-      <category term="前端" scheme="https://huiboxs.cn/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="CSS基础" scheme="https://huiboxs.cn/tags/CSS%E5%9F%BA%E7%A1%80/"/>
+    
+      <category term="前端" scheme="https://huiboxs.cn/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
@@ -366,9 +401,9 @@
       <category term="CSS" scheme="https://huiboxs.cn/categories/CSS/"/>
     
     
-      <category term="前端" scheme="https://huiboxs.cn/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="CSS基础" scheme="https://huiboxs.cn/tags/CSS%E5%9F%BA%E7%A1%80/"/>
+    
+      <category term="前端" scheme="https://huiboxs.cn/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="盒子模型" scheme="https://huiboxs.cn/tags/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/"/>
     
@@ -396,9 +431,9 @@
       <category term="CSS" scheme="https://huiboxs.cn/categories/CSS/"/>
     
     
-      <category term="前端" scheme="https://huiboxs.cn/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="CSS基础" scheme="https://huiboxs.cn/tags/CSS%E5%9F%BA%E7%A1%80/"/>
+    
+      <category term="前端" scheme="https://huiboxs.cn/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
