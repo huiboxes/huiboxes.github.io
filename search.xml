@@ -144,7 +144,7 @@
   </entry>
   <entry>
     <title>Python数据类型</title>
-    <url>/2020/03/29/PY-DateType/</url>
+    <url>/2020/03/29/PY-DataType/</url>
     <content><![CDATA[<p>&emsp;&emsp;Python3中有六个标准的数据类型：<code>Number</code>（数字型）、<code>String</code>（字符串）、<code>List</code>（列表）、<code>Tuple</code>（元组）、<code>Set</code>（集合）、<code>Dictionary</code>（字典）。 </p>
 <h2 id="Number（数字）"><a href="#Number（数字）" class="headerlink" title="Number（数字）"></a>Number（数字）</h2><p>&emsp;&emsp;在<code>Python3</code>中，数字分为<code>int</code>、<code>float</code>、<code>bool</code>、<code>complex</code>。所有的整数都在int范围内（<code>-∞~∞</code>），如果内存足够<code>Python</code>可以表示任意长度的数字。<code>float</code>表示小数，可以使用科学计数标志e或E表示，如 <code>1.2e+10</code> 。<code>True</code>和<code>False</code>（也可以是<code>0</code>和<code>1</code>）是<code>bool</code>型。<code>Python</code>的复数常量写成实部+虚部的写法，虚部以j或J结尾如 <code>3+4j，3J</code>，通常不会用到复数。</p>
 <p>&emsp;&emsp;<code>Python</code>中整数可以以十进制、二进制、八进制、十六进制表示。</p>
@@ -316,7 +316,7 @@
   </entry>
   <entry>
     <title>JS 判断数据类型</title>
-    <url>/2020/02/22/JS-DateType/</url>
+    <url>/2020/02/22/JS-DataType/</url>
     <content><![CDATA[<p>&emsp;&emsp;JavaScript是一个弱类型语言，不需要声明变量的类型，意为着一个变量可以存储任意类型的数据。代码执行的时候数据的类型由JS引擎自动确定。JS中数据分为基本类型和引用类型。基本类型有<code>number</code>、<code>string</code>、<code>boolean</code>、<code>null</code>、<code>undefined</code><em>（新标准中增加了<code>symbol</code>和<code>BigInt</code>类型）</em>。引用类型有<code>object</code>、<code>function</code>、<code>array</code>，其实<code>function</code>和<code>array</code>本质上也是对象（<code>object</code>）。</p>
 <p>&emsp;&emsp;怎样可以知道一个变量存储的数据是什么类型呢？通常使用<code>typeof</code>函数：</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span></span><br><span class="line"><span class="keyword">typeof</span>(a)      <span class="comment">//返回number		typeof a 与 typeof(a)等效</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="string">'data'</span></span><br><span class="line"><span class="keyword">typeof</span>(b)      <span class="comment">//返回string</span></span><br><span class="line"><span class="keyword">var</span> c = <span class="literal">true</span></span><br><span class="line"><span class="keyword">typeof</span>(c)      <span class="comment">//返回boolean		</span></span><br><span class="line"><span class="keyword">var</span> t = <span class="literal">null</span></span><br><span class="line"><span class="keyword">typeof</span>(t)      <span class="comment">//返回object</span></span><br><span class="line"><span class="keyword">var</span> d = [<span class="number">1</span>,<span class="string">'data'</span>,<span class="literal">true</span>]</span><br><span class="line"><span class="keyword">typeof</span>(d)	   <span class="comment">//返回object</span></span><br></pre></td></tr></table></figure>
@@ -535,8 +535,8 @@
         <category>CSS</category>
       </categories>
       <tags>
-        <tag>前端</tag>
         <tag>CSS基础</tag>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -548,7 +548,7 @@
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">	div&#123;</span><br><span class="line"><span class="css">		<span class="selector-tag">width</span>: 20<span class="selector-tag">px</span>;				<span class="comment">/* 盒子内容区域宽度20像素 */</span></span></span><br><span class="line"><span class="css">		<span class="selector-tag">height</span>: 20<span class="selector-tag">px</span>;				<span class="comment">/* 盒子内容区域高度20px */</span></span></span><br><span class="line"><span class="css">		<span class="selector-tag">border</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">black</span> <span class="selector-tag">solid</span>;	<span class="comment">/* 给盒子四周加上1像素、黑色实线边框 */</span></span></span><br><span class="line"><span class="css">		<span class="selector-tag">padding</span>: 2<span class="selector-tag">px</span>;				<span class="comment">/* 给盒子内部四周填充2像素 */</span></span></span><br><span class="line"><span class="css">		<span class="selector-tag">margin</span>: 20<span class="selector-tag">px</span>;					<span class="comment">/* 给盒子外部四周加20像素间距 */</span></span></span><br><span class="line">	&#125;</span><br><span class="line">	/* ==========================================================================</span><br><span class="line">       以上是复合属性，一次性同设置加盒子四周。想单独设置盒子某个方向的话在属性后加方向来单独设置</span><br><span class="line">       例如： </span><br><span class="line">       margin-top: 10px;		单独添加外上边距10像素</span><br><span class="line">       margin-right: 10px;		单独添加外右边距10像素</span><br><span class="line">       margin-bottom: 10px;		单独添加外下边距10像素</span><br><span class="line">       margin-left: 10px;		单独添加外左边距10像素</span><br><span class="line">       border与padding以此类推也是同样的方法。</span><br><span class="line">       ========================================================================== */</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
 <p>上面的盒子实际宽高是多少？</p>
-<p>&emsp;&emsp;这要分情况，因为盒子模型分为两种，一种是W3C标准盒模型，还有一种在低版本IE环境下的IE盒模型。两者两者的区别在于W3C盒模型的宽高等于<strong>内容+填充+边框+边距</strong>的总和。IE盒模型的宽高等于<strong>内容+边距</strong>，IE盒模型的填充和边框呢？IE盒模型将填充和边框都算在内容区域的。如果找到Windows 2000系统的主机，用其自带的IE浏览器就会发现，同样的属性，在现代浏览器与低版本IE的宽高是不一样的。</p>
+<p>&emsp;&emsp;这要分情况，因为盒子模型分为两种，一种是W3C标准盒模型，还有一种在低版本IE环境下的IE盒模型。两者两者的区别在于W3C盒模型的宽高等于<strong>内容+填充+边框+边距</strong>的总和。IE盒模型的宽高等于<strong>内容+边距</strong>，IE盒模型的填充和边框呢？IE盒模型将填充和边框都算在内容区域的。如果找到Windows 2000系统的主机，用其自带的IE浏览器就会发现，同样的属性，在现代浏览器与低版本IE的宽高是不一样的。使用<code>box-sizing: border-box;</code>也可以有IE盒模型的效果。</p>
 <p>&emsp;&emsp;上面的盒子按照W3C标准盒模型计算的话是：</p>
 <p>&emsp;&emsp;因为宽高设置同样的值，所以宽高都是：<code>20+1*2+2*2+20*2=46px</code> ;按照IE盒模型计算的话，宽高：<code>20+20*2=40px</code>。怎样快速理解盒子模型？用尽量少的<code>div</code>标签画一个远视图。</p>
 ]]></content>
@@ -556,8 +556,8 @@
         <category>CSS</category>
       </categories>
       <tags>
-        <tag>前端</tag>
         <tag>CSS基础</tag>
+        <tag>前端</tag>
         <tag>盒子模型</tag>
       </tags>
   </entry>
@@ -613,8 +613,8 @@
         <category>CSS</category>
       </categories>
       <tags>
-        <tag>前端</tag>
         <tag>CSS基础</tag>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
